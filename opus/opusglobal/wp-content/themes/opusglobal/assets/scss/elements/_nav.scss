@@ -1,0 +1,94 @@
+.nav {
+	padding: 0;
+	list-style: none;
+}
+
+.nav--sections {
+	background: $brand-primary;
+	color: $text-on-dark;
+}
+
+.nav--sections .nav__wrapper {
+	@include breakpoint ($bp-hands-wide, min) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&::after { content: none; }
+}
+
+.nav--sections .nav__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav--sections .nav__list,
+.nav--sections .nav__item,
+.nav--sections .nav__link {
+	display: block;
+
+	@include breakpoint ($bp-hands-wide) {
+		display: inline-block;
+	}
+}
+
+.nav__button {
+	width: 100%;
+
+	@include breakpoint ($bp-hands-wide) {
+		width: auto;
+	}
+}
+
+.nav--sections .nav__link {
+	@include nav-link;
+
+	&:visited { color: inherit; }
+
+	&:hover,
+	&.active {
+		border-bottom-width: 0;
+		background-color: $brand-primary-light;
+		color: $brand-highlight;
+	}
+}
+
+.nav__anchor {
+	@include size(0);
+	position: relative;
+	top: -4.25rem;
+}
+
+.nav__item--disable > a {
+	color: inherit;
+	text-transform: uppercase;
+	pointer-events: none;
+
+	&:visited { color: inherit; }
+
+	&:hover,
+	&:active,
+	&:focus {
+		border-bottom: 0;
+	}
+
+	&:active { background-color: transparent; }
+}
+
+.menu-item-has-children { position: relative; }
+
+.nav__toggle {
+	transition: $transition;
+	font-size: .5rem;
+
+	&.is-active {
+		color: $link-color;
+
+		&::before {
+			display: inline-block;
+			transform: rotate(180deg);
+		}
+	}
+}

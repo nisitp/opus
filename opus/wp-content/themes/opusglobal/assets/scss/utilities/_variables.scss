@@ -1,0 +1,115 @@
+//
+// variables
+//
+
+// colors
+$brand-primary: #1c2e3f;
+$brand-primary-dark: darken($brand-primary, 6%);
+$brand-primary-light: lighten($brand-primary, 6%);
+$brand-secondary: #ff6800;
+$brand-secondary-dark: #e15c00;
+$brand-secondary-light: #ff8400;
+$brand-highlight: #4fc6af;
+$brand-highlight-light: #95ddcf;
+
+$black: #000;
+$gray-dark: #999;
+$gray: #7c858c;
+$gray-light: #e8e8e8;
+$white: #fff;
+
+$text-color: #495865;
+$text-on-dark: #90b7de;
+$text-on-dark-alt: darken($text-on-dark, 10%);
+$link-color: $brand-secondary;
+
+$danger-color: #e51616;
+$danger-light: lighten($danger-color, 35%);
+
+// Backgrounds
+$bg-body: $white;
+$bg-offset: #f6f6f6;
+
+// Borders
+$border-default: 1px solid $gray-light;
+$border-on-dark: 1px solid #334b62;
+$border-thick: .25rem solid #ddd;
+$border-radius: .1875rem;
+
+// breakpoints
+
+$bp-alpha           : 320px;
+$bp-bravo           : 480px;
+$bp-charlie         : 768px;
+$bp-delta           : 960px;
+$bp-delta-alt       : 1080px;
+$bp-delta-mid       : 1040px;
+$bp-echo            : 1250px;
+$bp-echo-alt        : 1400px;
+
+// Icons
+$icon-bg: $brand-primary-light;
+
+$icon-bullet-height: 4.375rem;
+
+// fonts
+$font-stack: "interface", Helvetica, Arial, sans-serif;
+
+$font-size-small: .875rem;
+
+$line-height-body: 1.5;
+$line-height-heading: 1.3;
+
+// Layout
+$outer-bounds: 100rem;
+$content-bounds: 73.125rem;
+
+$vert-gutter-section: 6rem;
+
+// breakpoints (min)
+$bp-zero:		0;
+$bp-palm:		20em; // 320px
+$bp-hands: 		37.5em; // 600px
+$bp-hands-wide: 53.125em; // 850px
+$bp-desk:		64em; // 1024px
+$bp-desk-md:	70em; // 1120px
+$bp-desk-lg: 	100em; // 1600px
+
+$bp-zero-max:		$bp-palm - .0625em;
+$bp-palm-max:		$bp-hands - .0625em;
+$bp-hands-max: 		$bp-hands-wide - .0625em;
+$bp-hands-wide-max: $bp-desk - .0625em;
+$bp-desk-max:		$bp-desk-lg - .0625em;
+// at 1em = 16px, .0625em = 1px
+
+// Legacy breakpoints (max)
+$bp-mobile: 767px;
+$bp-tablet: 1024px;
+$bp-desktop: 1170px;
+$bp-desktop-wide: 1250px;
+
+// Utility breakpoints
+$bp-full-nav: $bp-desk-md;
+$bp-partial-nav: $bp-hands-wide;
+$bp-mobile-nav-max: $bp-hands-wide-max;
+
+// Bourbon variables
+$disable-warnings: true;
+
+// Neat variables -- http://thoughtbot.github.io/neat-docs/latest/
+$column: 4.375rem; // 70px
+$gutter: 1.875rem; // 30px
+$gutter-half: $gutter / 2; // 15px
+$grid-columns: 12;
+$max-width: $content-bounds;
+
+// Transitions
+$transition-timing: .25s ease-out;
+$transition: all $transition-timing;
+
+// Buttons
+$hamburger-padding-y: $gutter-half;
+$hamburger-padding-x: $gutter-half;
+
+// Inputs
+$select-arrow-color: #56738f;

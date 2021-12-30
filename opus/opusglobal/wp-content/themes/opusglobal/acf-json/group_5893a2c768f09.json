@@ -1,0 +1,332 @@
+{
+    "key": "group_5893a2c768f09",
+    "title": "Post type - Events",
+    "fields": [
+        {
+            "key": "field_5893a2c76f48a",
+            "label": "Event image",
+            "name": "og_image",
+            "type": "image",
+            "instructions": "Upload a publication logo with transparent or white background.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 600,
+            "min_height": 295,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": ".1",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5893a2c76f461",
+            "label": "Event date",
+            "name": "og_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "M j, Y",
+            "return_format": "",
+            "first_day": 1
+        },
+        {
+            "key": "field_58a5db1d8834f",
+            "label": "Is multiple day event?",
+            "name": "is_multi_day",
+            "type": "true_false",
+            "instructions": "Indicate whether this event is more than one day long.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5898e67c418d5",
+            "label": "Event start time",
+            "name": "event_start_time",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5db1d8834f",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i A",
+            "return_format": "c"
+        },
+        {
+            "key": "field_5898e7af418d7",
+            "label": "Event end time",
+            "name": "event_end_time",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5db1d8834f",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i A",
+            "return_format": "c"
+        },
+        {
+            "key": "field_5a2abb0fe7ec4",
+            "label": "Event Timezone",
+            "name": "event_timezone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5db1d8834f",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58a5db8088350",
+            "label": "Event end date",
+            "name": "og_end_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a5db1d8834f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "M j, Y",
+            "return_format": "",
+            "first_day": 1
+        },
+        {
+            "key": "field_5893e19803327",
+            "label": "Event city\/state",
+            "name": "event_city",
+            "type": "text",
+            "instructions": "Enter location as \"City, ST\", e.g., Tallahassee, FL",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5893b7b9d22d5",
+            "label": "Event Description",
+            "name": "event_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0
+        },
+        {
+            "key": "field_5893a467d22d4",
+            "label": "Topics",
+            "name": "event_topics",
+            "type": "wysiwyg",
+            "instructions": "Enter topics covered at the event, such as with a bulleted list.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "default_value": "",
+            "delay": 0
+        },
+        {
+            "key": "field_5893a35dd22d1",
+            "label": "Agenda items",
+            "name": "agenda_items",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "collapsed": "field_5893a40fd22d3",
+            "sub_fields": [
+                {
+                    "key": "field_5893a3d8d22d2",
+                    "label": "Time",
+                    "name": "agenda_time",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50%",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "g:ia"
+                },
+                {
+                    "key": "field_5893a40fd22d3",
+                    "label": "Title",
+                    "name": "agenda_title",
+                    "type": "text",
+                    "instructions": "Enter a *brief* title for the agenda item.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 122,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5893a2c76f496",
+            "label": "Registration link",
+            "name": "event_link",
+            "type": "url",
+            "instructions": "Enter the URL for the event registration",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5898f76ac68af",
+            "label": "Registration link text",
+            "name": "event_link_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Register",
+            "maxlength": 36,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "og_event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1512749903
+}

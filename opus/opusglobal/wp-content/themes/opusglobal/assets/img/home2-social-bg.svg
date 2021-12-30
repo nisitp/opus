@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1800" height="230" viewBox="0 0 1800 230">
+  <defs>
+    <polygon id="home2-social-bg-a" points="0 592.626 1800 592.626 1800 0 0 0"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="matrix(1 0 0 -1 0 593.475)">
+    <mask id="home2-social-bg-b" fill="#fff">
+      <use xlink:href="#home2-social-bg-a"/>
+    </mask>
+    <g mask="url(#home2-social-bg-b)">
+      <g transform="translate(0 -2.562)">
+        <path fill="#5E7489" fill-rule="nonzero" d="M1800,404.499744 C1414.29531,309.642211 1041.325,429.21952 773.640625,521.17996 C557.414062,595.461106 316.879687,623.054548 78.225,550.761541 C51.5203125,542.637187 25.440625,533.549218 0,523.580408 L0,0.354522942 L1800,0.354522942 L1800,404.499744 Z" transform="translate(0 2.208)"/>
+        <path fill="#556C81" fill-rule="nonzero" d="M1800,479.464947 C1417.25781,335.155369 1019.65625,422.111881 736.590625,490.28024 C513.064062,544.111503 270.385937,549.240372 40.46875,455.338646 C26.76875,449.724065 13.2875,443.837734 0,437.72807 L0,0.993288946 L1800,0.993288946 L1800,479.464947 Z" transform="translate(0 .568)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,85 @@
+.icon-link {
+	line-height: 1;
+
+	&:hover,
+	&:active,
+	&:focus {
+		border-bottom: 0;
+	}
+}
+
+.icon {
+	.icon__wrapper & {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		max-width: 40%;
+		transform: translate(-50%, -50%);
+	}
+
+	&--intro {
+		max-width: 3.75rem;
+		margin-bottom: 1.5 * $gutter;
+
+		@include breakpoint($bp-hands-wide) {
+			max-width: 4.5rem;
+		}
+	}
+
+	.card__top & { margin-bottom: 2rem; }
+}
+
+.icon--bullet {
+	// This class, applied to an image file, should be wrapped, by itself, in a
+	// container to set the width for purposes of percentage padding. This
+	// Allows for flexibility in size usage.
+	display: block;
+	max-width: 100%;
+	height: auto;
+	padding: 18%;
+	border-radius: 50%;
+	background-color: $icon-bg;
+}
+
+// Contain .icon in .icon__wrapper for a responsive variation of .icon--bullet.
+// @TODO Check if .icon--bullet can be totally replaced.
+.icon__wrapper {
+	display: block;
+	position: relative;
+	padding-top: 100%;
+	border-radius: 50%;
+	background-color: $icon-bg;
+}
+
+.icon--download::after { content: url("../img/icons/icon-download.svg"); }
+.icon--read::after { content: url("../img/icons/icon-read.svg"); }
+.icon--demo::after { content: url("../img/icons/icon-demo.svg"); }
+
+.icon-label {
+	// Used for short strings of text with a bullet-style preceding icon.
+	&::before { vertical-align: middle; }
+}
+
+.icon-group {
+	margin-bottom: $gutter;
+	padding-left: 0;
+
+	li {
+		display: inline-block;
+		margin-left: .375rem;
+
+		&:first-child { margin-left: 0; }
+
+		a {
+			@include transition;
+			color: $text-on-dark;
+			font-size: 2.25rem;
+			text-decoration: none;
+
+			&:hover,
+			&:focus { color: $text-on-dark; }
+
+			&:active { background: none !important; }
+		}
+	}
+}

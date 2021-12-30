@@ -1,0 +1,102 @@
+// Display classes
+.hide-text {
+	// Used for icons and other elements that have a defined width, but should
+	/// only display their background image or pseudo-element
+	// visible.
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.u-invisible {
+	// Used for elements that are meant for screen readers to read, but not be
+	// visible. Based on Bootstrap's .sr-only class.
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+	overflow: hidden;
+}
+
+.u-hidden-mobile {
+	@include breakpoint($bp-palm-max, max) {
+		display: none !important;
+	}
+}
+
+.u-hidden-tablet {
+	@media screen and (min-width: $bp-hands) and (max-width: $bp-hands-wide-max) {
+		display: none !important;
+	}
+}
+
+.u-hidden-tablet-down {
+	@media screen and (max-width: $bp-hands-max) {
+		display: none !important;
+	}
+}
+
+.u-hidden-tablet-up {
+	@include breakpoint($bp-hands) {
+        display: none !important;
+    }
+}
+
+.u-inline-block { display: inline-block; }
+
+// Position classes
+.u-relative { position: relative; }
+
+.u-align-right { text-align: right; }
+
+.u-marginless { margin: 0; }
+
+// Color and size
+.color-inherit {
+	&,
+	&:visited { color: inherit; }
+}
+
+// Border and Background
+.u-border-split-top {
+	padding-top: 1em;
+	border-top: 1px solid currentColor;
+}
+
+.bg-white,
+.bg-gray,
+.bg-primary,
+.bg-pattern,
+.panel--banner--gradient {
+	article > &:last-child,
+	.panel__wrapper:last-child > & {
+		@include footer-flush;
+	}
+}
+
+.bg-white { background-color: $bg-body; }
+.bg-gray { background-color: $bg-offset; }
+
+.bg-primary {
+	background-color: $brand-primary;
+	color: $text-on-dark;
+
+	%heading-shared { color: $white; }
+}
+
+.bg-pattern { background: url("../img/bg-pattern.png") repeat; }
+
+.bg-img-cover--dark {
+	background-position: center;
+	background-size: cover;
+	color: $white;
+}
+
+@mixin breakpoint($breakpoint, $width: min) {
+	@media (#{$width}-width: $breakpoint) {
+		@content;
+	}
+}

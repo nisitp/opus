@@ -1,0 +1,26 @@
+.sidebar {
+//    width: 100%;
+//    @include grid-container;
+    background: #f3f3f3 url('../img/sidebar.png');
+    background-size: 46px 23px;
+
+  @include mq(tablet,max,phone) {
+    clear: both;
+  }
+  @include mqList((tablet,desktop)) {
+    @include grid-column(3);
+  }
+  
+  > div {
+    padding: 20px;
+  }
+  
+  ul, li {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    margin-bottom: 0.5em; 
+  }
+  
+}

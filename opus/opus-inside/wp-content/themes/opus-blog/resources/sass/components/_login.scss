@@ -1,0 +1,31 @@
+#theme-my-login {
+  padding-top: 200px;
+  position: relative;
+  
+  .aadsso-login-form-text {
+    position: absolute;
+    top: 20px;
+    a:first-child {
+      display: block;
+      border: 2px solid $orange;
+      background: $orange;
+      color: white;
+      font-weight: bold;      
+      padding: 20px;
+      &:hover {
+        color: $orange;
+        background: white;
+      }
+    }
+  }
+  
+  .tml-user-login-wrap {
+    &:before {
+      display: block;
+      font-style: italic;
+      color: $grey;
+      content: " - or log in with wordpress credentials - ";
+      margin-bottom: 20px;
+    }
+  }
+}

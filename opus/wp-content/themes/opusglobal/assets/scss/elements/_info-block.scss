@@ -1,0 +1,104 @@
+.info-block {
+	@include listing-block;
+}
+
+.info-block__inner {
+	@include listing-block-contents;
+
+	.info-block--row & {
+		@include padding($gutter null);
+
+		@media screen and (min-width: $bp-desk) {
+			@include row;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	.accordion-list & {
+		@media screen and (min-width: $bp-desk) {
+			// Padding is increase in max-width from accordion-list minus
+			// info-block padding.
+			@include padding(null (6.25rem - 1rem));
+		}
+	}
+}
+
+.info-block__text {
+	.info-block--row & {
+		@media screen and (min-width: $bp-desk) {
+			@include span-columns(7 of 12);
+		}
+	}
+}
+
+.info-block__aside {
+	@media screen and (min-width: $bp-hands) {
+		display: flex;
+	}
+
+	@media screen and (min-width: $bp-desk) {
+		@include span-columns(5 of 12);
+		display: flex;
+	}
+
+	@include breakpoint($bp-desk-lg) {
+		@include span-columns(4 of 12);
+		display: flex;
+	}
+}
+
+.info-block__logo {
+	display: block;
+	width: 20rem;
+
+	@include breakpoint($bp-hands) {
+		align-self: flex-start;
+	}
+
+	@include breakpoint($bp-desk) { width: auto; }
+}
+
+.info-block__meta {
+	.info-block--row & {
+		&:not(:last-child) {
+			@media screen and (min-width: $bp-hands) {
+				margin-right: $gutter * 2;
+			}
+
+			@media screen and (min-width: $bp-desk) {
+				margin-right: $gutter;
+			}
+
+			@media screen and (min-width: $bp-desk-lg) {
+				margin-right: $gutter * 2;
+			}
+		}
+	}
+
+	&--icon {
+		position: relative;
+		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+.info-block__description {
+	.info-block--row & {
+		margin-bottom: 1.25rem;
+
+		@media screen and (min-width: $bp-hands) {
+			margin-bottom: $gutter;
+		}
+
+		@media screen and (min-width: $bp-desk) {
+			margin-bottom: 0;
+		}
+	}
+}

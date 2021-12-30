@@ -1,0 +1,464 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	// min-height: 18.125rem;
+	margin-bottom: $gutter;
+	border-bottom: $border-thick;
+	background: $white;
+
+	// .link--static fixes IE 11 bug.
+	.link--static { flex-shrink: 0; }
+
+	.listing--blocks & {
+		width: 100%;
+		height: 100%;
+
+		// Remove bottom margin in block listings when not vertically stacked.
+		@include breakpoint($bp-hands) {
+			margin-bottom: 0;
+		}
+	}
+
+	.listing--grid & {
+		@include listing-block-contents;
+		border-bottom: 0;
+	}
+
+	&.card--teaser {
+		@include padding(0 $gutter 2.5rem);
+		position: relative;
+		width: 100%;
+		height: initial;
+		border-right: 1px solid $white;
+		border-left: 1px solid $white;
+
+		&::before,
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			content: "";
+		}
+
+		&::before {
+			display: block;
+			top: 5.375rem;
+			background-image: url("../img/bg-pattern.png");
+			z-index: -1;
+		}
+
+		&::after {
+			border-bottom: 4px solid $brand-highlight;
+		}
+	}
+
+	&--linked {
+		cursor: pointer;
+
+		&__overlay {
+			position: relative;
+
+			&::before {
+				@include position(absolute, 0);
+				transition: background-color $transition-timing;
+				background-color: rgba($brand-primary, .4);
+				content: "";
+			}
+		}
+
+		@include hf {
+			.card--linked__overlay::before {
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.card--press,
+	&.card--event {
+		display: flex;
+		flex-direction: column;
+		border-bottom-width: 0;
+	}
+
+	.card__feature &.card--press,
+	.card__feature &.card--event {
+		margin-bottom: 2.5rem;
+
+		@include breakpoint($bp-hands) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	.card__feature &.card--press {
+		@include breakpoint($bp-hands) {
+			@include row;
+			display: flex;
+			flex-direction: row;
+		}
+	}
+}
+
+.card__top {
+	&--bordered {
+		display: flex;
+		align-items: center;
+		border: $border-default;
+
+		&[href] {
+			@include hf { border-bottom: $border-default; }
+		}
+	}
+
+	.card--icon & {
+		@include margin(null auto);
+		width: 50%;
+	}
+
+	.card--teaser.card--icon & {
+		width: 10.75rem;
+		max-width: 75%;
+		margin-bottom: $gutter-half;
+
+		.icon {
+            display: block;
+			position: relative;
+			top: 0;
+			margin: 0 auto;
+			transition:
+				top $transition-timing,
+				max-width $transition-timing;
+			z-index: 1;
+		}
+	}
+
+	.card--teaser.card--icon:hover & .icon,
+	.card--teaser.card--icon:focus & .icon {
+		top: -3.25rem;
+		max-width: 68%;
+
+		@include ie-only{
+			top: -4.25rem;
+		}
+	}
+
+	.card--press &,
+	.card--event & {
+		margin-bottom: 1.25rem;
+
+		@include breakpoint($bp-hands) {
+			margin-bottom: rem(30px);
+		}
+	}
+
+	.card__feature .card--press & {
+		@include breakpoint($bp-hands) {
+			@include span-columns(4 of 12);
+			//display: inline-flex;
+			//align-items: center;
+			margin-bottom: 0;
+		}
+	}
+
+	&--icon {
+		a,
+		img,
+		svg {
+			display: block;
+			width: 100%;
+		}
+
+		a{
+			&:hover{
+				border-bottom: 0;
+			}
+		}
+
+		img,
+		svg {
+			@include margin(null auto);
+			max-width: 10.5rem;
+		}
+	}
+
+	.listing__card & {
+		display: flex;
+		min-height: 9.375rem;
+		padding: $gutter 3.125rem;
+
+		@include breakpoint($bp-hands) {
+			min-height: 12.5rem;
+		}
+
+		.card__img {
+			@include margin(null auto);
+			max-width: 12.5rem;
+		}
+	}
+}
+
+.card--icon,
+.card--simple {
+	border-bottom-width: 0;
+	background: none;
+}
+
+.card--simple { min-height: 0; }
+
+.card__img {
+	display: block;
+	width: 100%;
+	height: auto;
+
+    // Fixing IE11 svg bug when width attribute is set.
+	&[src*=".svg"] { width: auto; }
+}
+
+.card__body {
+	color: $text-color;
+
+	&.card__body--icon {
+		display: flex;
+		flex-grow: 1;
+		align-items: center;
+		min-height: 8rem;
+		padding: .25rem;
+	}
+
+	&.card__body--pad {
+		padding: 1.25rem .625rem;
+
+		@include breakpoint($bp-hands) {
+			padding: 1.875rem 1.25rem;
+		}
+	}
+
+	.card--icon & { text-align: center; }
+
+	.card--event &,
+	.card--press & {
+		flex-grow: 1;
+		padding-bottom: 1.25rem;
+		border-bottom: $border-thick;
+
+		@include breakpoint($bp-hands) {
+			padding-bottom: rem(30px);
+		}
+	}
+
+	.card__feature .card--press & {
+		@include breakpoint($bp-hands) {
+			@include span-columns(8 of 12);
+		}
+	}
+
+	.listing__card & {
+		padding: 2.5rem 1.25rem;
+		text-align: left;
+
+		@include breakpoint($bp-desk) {
+			@include padding(null 3.75rem);
+		}
+	}
+}
+
+.card__link {
+	text-transform: uppercase;
+
+	&,
+	&:visited { color: $brand-primary; }
+
+	&:hover,
+	&:focus {
+		border-bottom: 0;
+		color: $link-color;
+	}
+}
+
+.card__title {
+	margin-bottom: 0;
+
+	.card__body & { color: $brand-primary; }
+
+	.card--press &,
+	.card--event & {
+		font-size: .875rem;
+		letter-spacing: .075em;
+		line-height: 1.5;
+
+		@include breakpoint($bp-hands, min) {
+			font-size: 1rem;
+		}
+	}
+
+	.card__feature & {
+		@include h3;
+	}
+
+	.card--linked &:hover,
+	.card--linked &:focus,
+    [href] > &:hover,
+	[href] > &:focus, {
+		color: $link-color;
+	}
+}
+
+.card__icon {
+	@include size(3.125rem);
+	display: inline-flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	margin: .5rem;
+	border-radius: 50%;
+	background-color: $brand-secondary;
+	text-align: center;
+
+	@include breakpoint($bp-desk, min) {
+		margin-left: -1.875rem;
+	}
+
+	svg {
+		width: 40%;
+		fill: $white;
+	}
+}
+
+.card__teaser {
+	.card--teaser & {
+		@include position(absolute, .75rem 0 0);
+		@include padding(3.75rem null null);
+		transition: opacity $transition-timing;
+		background-color: $brand-primary;
+		color: $text-on-dark;
+		opacity: 0;
+
+		&__text {
+			@include padding(null $gutter);
+		}
+
+		&__link {
+			@include position(absolute, null 0 0);
+			@include padding(1.25rem null);
+			width: 100%;
+			transition: background-color $transition-timing;
+			background-color: $brand-highlight;
+			color: $white;
+			font-weight: bold;
+			line-height: 1;
+			text-transform: uppercase;
+
+			&:hover,
+			&:focus {
+				border-bottom-width: 0;
+				background-color: $brand-highlight-light;
+			}
+		}
+	}
+
+	.card--teaser:hover &,
+	.card--teaser:focus & {
+		display: block;
+		opacity: 1;
+	}
+}
+
+.intro-know-block {
+	position: relative;
+	width: calc(100% / 3);
+	float: left;
+	text-align: center;
+
+	@include breakpoint($bp-tablet, max) {
+		width: 50%;
+
+		&:nth-of-type(3) {
+			width: 100%;
+			margin-top: 145px;
+		}
+	}
+
+	@include breakpoint($bp-mobile, max) {
+		width: 100%;
+		margin-top: 145px;
+	}
+
+	.intro-know-block-image {
+		@include transition;
+		position: absolute;
+		top: -85px;
+		width: 100%;
+		margin: 0 auto;
+		transition-duration: 400ms;
+		text-align: center;
+		z-index: 1;
+
+		img {
+			@include transition;
+			display: block;
+			width: 170px;
+			height: 170px;
+			margin: 0 auto;
+			transition-duration: 400ms;
+		}
+	}
+
+	&.intro-know-block-active {
+		.intro-know-block-image {
+			top: -132.5px;
+
+			img {
+				width: 110px;
+				height: 110px;
+			}
+		}
+	}
+
+	p { color: $gray-dark; }
+
+	.intro-know-block-main {
+		padding: 115px 30px 30px;
+		border-bottom: 4px solid $brand-highlight;
+		background-image: url("../img/pw_maze_white_@2X.png");
+		background-size: 46px 23px;
+
+		.intro-know-block-details {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 100%;
+			padding: 27.5px 0 50px;
+			background-color: $brand-primary;
+
+			p {
+				padding: 0 20px;
+				color: $text-on-dark;
+			}
+
+			a {
+				display: block;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 50px;
+				padding: 0;
+				background-color: $brand-highlight;
+				color: $white;
+				font-weight: 700;
+				line-height: 50px;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.card__is-featured {
+	display: none;
+
+	.card__feature & {
+		display: block;
+	}
+}

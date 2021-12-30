@@ -1,0 +1,36 @@
+@font-face{
+    font-family: theme-icons;
+    src: url(../fonts/theme-icons.eot);
+    src: url(../fonts/theme-icons.eot?#iefix) format("eot"),
+         url(../fonts/theme-icons.woff2) format("woff2"),
+         url(../fonts/theme-icons.woff) format("woff"),
+         url(../fonts/theme-icons.ttf) format("truetype"),
+         url(../fonts/theme-icons.svg#theme-icons) format("svg")
+}
+
+.theme-icon-contact,
+.theme-icon-blog,
+.theme-icon-careers {
+    &:before {
+        font-family: theme-icons;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        text-decoration: none;
+        text-transform: none;
+    }
+}
+
+.theme-icon-contact:before {
+    content: "";
+}
+
+.theme-icon-blog:before {
+    content: ""
+}
+
+.theme-icon-careers:before {
+    content: "";
+}

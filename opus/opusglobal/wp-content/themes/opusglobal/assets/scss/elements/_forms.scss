@@ -1,0 +1,298 @@
+#{$all-text-inputs},
+select,
+.select2-selection.select2-selection--single {
+	@include transition;
+	width: 100%;
+	margin-bottom: 1.25rem;
+	padding: 1.25rem 0 1.25rem 1.5rem;
+	border: $border-default;
+	border-radius: $border-radius;
+	background-color: $white;
+	font-family: $font-stack;
+	font-size: inherit;
+
+	@include hf {
+		border-color: $brand-primary;
+		color: $brand-primary;
+
+		&::placeholder { color: inherit; }
+	}
+
+	&[aria-invalid="true"],
+	&:invalid,
+	.gfield_error & {
+		border-color: $danger-color;
+	}
+
+	&[aria-invalid="true"],
+	.gfield_error & {
+		@include border-bottom-radius(0);
+	}
+
+	.gfield_error & {
+		margin-bottom: 0;
+	}
+}
+
+// Validation
+.gfield_description.validation_message {
+	@include border-bottom-radius($border-radius);
+	margin-bottom: 1.25rem;
+	padding: .25em;
+	border: 1px solid $danger-color;
+	background-color: $danger-color;
+	color: $white;
+	font-weight: bold;
+}
+
+.gform_confirmation_message {
+	margin-bottom: $gutter-half;
+	padding: 1em;
+	border: 1px solid $brand-highlight;
+	background-color: $brand-highlight-light;
+	font-weight: bold;
+}
+
+.validation_error {
+	margin-bottom: $gutter-half;
+	padding: 1em;
+	border: 1px solid $danger-color;
+	background-color: $danger-color;
+	color: $white;
+	font-weight: bold;
+}
+
+.gform_anchor {
+	display: block;
+    position: relative;
+	top: -12.5rem;
+    visibility: hidden;
+}
+
+//
+// Form layout styles
+//
+.form-field__form ul {
+	@include row();
+	position: relative;
+}
+
+.form-field { @include span-columns(12 of 12); }
+
+.form-field-1of3 {
+	@include breakpoint($bp-hands) {
+		@include span-columns(6 of 12);
+		@include omega(2n);
+	}
+
+	@include breakpoint($bp-desk) {
+		@include span-columns(4 of 12);
+	}
+
+	&.form-field--full {
+		width: 100%;
+
+		@include breakpoint($bp-desk) {
+			@include span-columns(4 of 12);
+		}
+	}
+
+	&.form-field--right {
+		@include breakpoint($bp-desk) {
+			margin-right: 0;
+			float: right;
+		}
+	}
+
+	&.form-field--right.form-field--full {
+		// Combined to fill full right column.
+		@include breakpoint($bp-desk) {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+
+			.ginput_container_textarea {
+				display: flex;
+				height: 100%;
+			}
+		}
+	}
+}
+
+.form-field-2of3 {
+	@include breakpoint($bp-desk) {
+		@include span-columns(8 of 12);
+	}
+}
+
+// Gravity Forms overrides
+.gform_fields {
+	padding: 0;
+	list-style: none;
+
+	label {
+		// Used for elements that are meant for screen readers to read, but not
+		// be visible. Based on Bootstrap's .sr-only class.
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+	}
+
+	.gform_validation_container {
+		// Spam catching field that is meant to be hidden from actual users.
+		// Based on Bootstrap's .sr-only class.
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+	}
+}
+
+.gform_footer {
+	padding-top: 1.25rem;
+
+	@include breakpoint ($bp-hands) {
+		padding-top: 2.5rem;
+	}
+
+	input[type="submit"] {
+		@include margin(null auto);
+		display: block;
+		width: 100%;
+		-webkit-appearance: none;
+
+		@include breakpoint ($bp-hands) {
+			width: auto;
+		}
+	}
+}
+
+// Select2 styles
+// Below from Select.js. Modified for this theme.
+//colors
+$select-bg: $bg-body;
+
+.select2 {
+	display: block;
+
+	// When in a gravity form, always fill the container.
+	.gform_fields &.select2-container { width: 100% !important; }
+}
+
+.select2-container--open {
+	z-index: 50;
+
+	select + & { z-index: auto; }
+}
+
+.select2-selection.select2-selection--single {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: auto;
+
+	@include hf {
+		text-decoration: none;
+	}
+
+	.select2-container--below.select2-container--open & {
+		@include border-bottom-radius(0);
+	}
+
+	.select2-container--above.select2-container--open & {
+		@include border-top-radius(0);
+	}
+
+	.select2-container--open & {
+		background: $select-bg;
+		color: $white;
+	}
+
+	.select2-selection__rendered {
+		padding: 0;
+		line-height: inherit;
+	}
+
+	.select2-container & {
+		height: auto;
+	}
+
+	.select2-selection__arrow {
+		@include icon(chevron-down);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.5rem;
+		height: 100%;
+		text-align: center;
+
+		&::before {
+			transition: transform $transition-timing;
+			color: $select-arrow-color;
+			font-size: .75rem;
+		}
+
+		b { display: none; }
+	}
+
+	&[aria-expanded="true"] .select2-selection__arrow::before {
+		transform: rotate(180deg);
+	}
+}
+
+.select2-dropdown {
+	border-radius: 0;
+	border-color: $brand-primary;
+	background-color: transparent;
+
+	&.select2-dropdown--below {
+		@include border-bottom-radius($border-radius);
+	}
+
+	&.select2-dropdown--above {
+		@include border-top-radius($border-radius);
+	}
+}
+
+.select2-results__option {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 1.25rem;
+	background: $select-bg;
+	line-height: 1.25rem;
+	list-style: none;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	overflow: hidden;
+
+	.select2-container--default &[aria-selected=true],
+	.select2-container--default &--highlighted[aria-selected],
+	&.select2-results__option--highlight,
+	&:hover {
+		background: $brand-primary-light;
+		color: $white;
+	}
+}
+
+.select2-results__options {
+	max-height: 19.25rem;
+	margin: 0;
+	padding: 0;
+	overflow-y: auto;
+}
+
+.single-resource-left form.form p.submit {
+	margin: 0px !important;
+}

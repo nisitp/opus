@@ -1,0 +1,29 @@
+body {
+  > header,
+  > nav,
+  > .container {
+    @include grid-container;
+
+    @include mq('desktop') {
+
+    @include grid-debug('desktop',blue);
+      max-width: 1200px; margin:0 auto;      
+    }  
+  }
+  
+}
+
+.container {
+
+  @include mq('tablet') {
+    display: flex;
+    flex-direction: row;
+    align-items: strech;
+  }
+
+  @include mq('desktop') {
+    display: flex;
+    flex-direction: row;
+    align-items: strech;
+  }
+}

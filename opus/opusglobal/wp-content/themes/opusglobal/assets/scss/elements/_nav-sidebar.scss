@@ -1,0 +1,45 @@
+.nav--sidebar {
+	text-transform: uppercase;
+
+	@include breakpoint($bp-desk) {
+		text-align: right;
+	}
+
+	li {
+		display: inline-block;
+		margin-left: 3.125rem;
+
+		&:first-of-type { margin-left: 0; }
+
+		@include breakpoint($bp-desk) {
+			display: block;
+			margin-left: 0;
+		}
+	}
+
+	a {
+		@include padding(1.875rem null);
+		display: inline-block;
+		color: $gray;
+		font-weight: bold;
+
+		&.is-active,
+		&:hover,
+		&:focus {
+			border-bottom-width: 0;
+			color: $link-color;
+		}
+
+		@include breakpoint($bp-desk) {
+			@include padding($gutter-half $gutter $gutter-half null);
+			display: block;
+
+			&.is-active,
+			&:hover,
+			&:focus {
+				padding-right: $gutter - .125rem;
+				border-right: .125rem solid $link-color;
+			}
+		}
+	}
+}

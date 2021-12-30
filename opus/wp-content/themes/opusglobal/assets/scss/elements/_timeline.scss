@@ -1,0 +1,54 @@
+.timeline {
+	.panel--timeline & {
+		@include breakpoint($bp-hands) {
+			@include span-columns(6 of 12);
+			@include shift(1);
+		}
+	}
+}
+
+.timeline__section { position: relative; }
+
+.timeline__year {
+	margin-bottom: .25em;
+	// @TODO Address accessibility issue here.
+	color: $gray-light;
+
+	@include breakpoint($bp-hands) {
+		position: absolute;
+		top: -.25em;
+		left: -1.75em;
+		z-index: -1;
+	}
+
+	@include breakpoint($bp-desk) {
+		left: -2em;
+	}
+}
+
+.timeline__event-list {
+	margin: 0 0 ($gutter * 1.5);
+	padding-left: 0;
+	list-style: none;
+
+	@include breakpoint($bp-desk) {
+		margin-bottom: $gutter * 2.5;
+	}
+
+	.timeline__section:last-of-type & {
+		margin-bottom: 0;
+	}
+}
+
+.timeline__event {
+	padding-bottom: $gutter;
+	border-bottom: 1px solid $gray-light;
+
+	& + & {
+		margin-top: $gutter;
+	}
+
+	&:first-of-type {
+		padding-top: $gutter / 2;
+	}
+}

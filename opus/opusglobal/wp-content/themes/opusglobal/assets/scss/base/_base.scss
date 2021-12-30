@@ -1,0 +1,294 @@
+//
+// Base
+//
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+html{
+	overflow-x: hidden;
+}
+
+body {
+	background-color: $bg-body;
+	color: $text-color;
+	font-family: $font-stack;
+	font-size: $font-size-small;
+    -webkit-font-smoothing: antialiased !important;
+	letter-spacing: .075em;
+	line-height: $line-height-body;
+	overflow-x: hidden;
+
+	@include breakpoint($bp-hands, min) {
+		font-size: 1rem;
+	}
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+
+p { margin-bottom: $gutter; }
+
+a {
+	color: $link-color;
+	text-decoration: none;
+
+	&:visited { color: $link-color; }
+
+	&:hover,
+	&:focus {
+		border-bottom: 1px solid currentColor;
+	}
+
+	&:active { background-color: rgba($link-color, .2); }
+}
+
+%heading-shared {
+	margin-bottom: .5em;
+	color: $brand-primary;
+	font-weight: bold;
+	letter-spacing: .025em;
+	line-height: $line-height-heading;
+}
+
+h1,
+.h1 {
+	@extend %heading-shared;
+	font-size: 1.875rem;
+	letter-spacing: .01em;
+	line-height: 1;
+
+	@include breakpoint($bp-hands, min) {
+		font-size: 3rem;
+	}
+
+	@include breakpoint($bp-desk, min) {
+		font-size: 3.75rem;
+	}
+}
+
+h2,
+.h2 {
+	@extend %heading-shared;
+	font-size: 1.5rem;
+
+	@include breakpoint($bp-hands, min) {
+		font-size: 1.875rem;
+		line-height: 1;
+	}
+
+	@include breakpoint($bp-desk, min) {
+		font-size: 2.25rem;
+	}
+}
+
+h3,
+.h3 {
+	@extend %heading-shared;
+	font-size: 1.313rem;
+
+	@include breakpoint($bp-hands, min) {
+		font-size: 1.5rem;
+		line-height: 1;
+	}
+
+	@include breakpoint($bp-desk, min) {
+		font-size: 1.875rem;
+	}
+}
+
+@mixin h3 {
+	margin-bottom: .5em;
+	color: $brand-primary;
+	font-size: 1.313rem;
+	font-weight: bold;
+	letter-spacing: .025em;
+	line-height: $line-height-heading;
+
+	@include breakpoint($bp-hands, min) {
+		font-size: 1.5rem;
+		line-height: 1;
+	}
+
+	@include breakpoint($bp-desk, min) {
+		font-size: 1.875rem;
+	}
+}
+
+h4,
+.h4,
+h5,
+.h5 {
+	@extend %heading-shared;
+	font-size: 1.125rem;
+
+	@include breakpoint($bp-hands, min) {
+		font-size: 1.313rem;
+	}
+}
+
+h4,
+.h4 {
+	@include breakpoint($bp-desk, min) {
+		font-size: 1.5rem;
+	}
+}
+
+
+h6,
+.h6 {
+	@extend %heading-shared;
+	margin-bottom: 0;
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.checkboxes {
+	margin-bottom: 10px;
+
+	p {
+		float: left;
+		color: $brand-primary;
+		font-weight: 700;
+
+		@include breakpoint($bp-mobile, max) {
+			margin-bottom: 10px;
+			float: none;
+		}
+	}
+
+	.checkbox {
+		@include transition;
+		position: relative;
+		margin-left: 30px;
+		float: left;
+
+		@include breakpoint($bp-mobile, max) {
+			margin-right: 30px;
+			margin-left: 0;
+		}
+
+		&::before {
+			@include transition;
+			position: absolute;
+			top: calc(50% - 8px);
+			left: 0;
+			width: 16px;
+			height: 16px;
+			border: 1px solid #ccc;
+			border-radius: $border-radius;
+			background-color: #eee;
+		}
+	}
+
+	label {
+		position: relative;
+		float: left;
+
+		input {
+			position: relative;
+			margin-right: 10px;
+			border: none;
+
+			&:checked {
+				&::before {
+					border: none;
+					background-color: #203243;
+					color: $white;
+					text-align: center;
+					content: "\2714";
+				}
+			}
+
+			&:hover {
+				&::before {
+					border: 1px solid #203243;
+				}
+			}
+
+			&::before {
+				@include transition;
+				position: absolute;
+				top: calc(50% - 8px);
+				left: 0;
+				width: 16px;
+				height: 16px;
+				border: 1px solid #ccc;
+				border-radius: $border-radius;
+				background-color: #eee;
+				content: "";
+			}
+		}
+	}
+}
+
+ul {
+	padding-left: 1.5rem;
+	list-style-type: circle;
+}
+
+ol {
+	counter-reset: item;
+
+	> li {
+		position: relative;
+		padding-left: 2em;
+		list-style-type: none;
+		counter-increment: item;
+
+		+ li { margin-top: 1em; }
+
+		&::before {
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			padding-right: 1.5em;
+			color: $brand-highlight;
+			font-weight: bold;
+			text-align: right;
+			content: counter(item);
+		}
+	}
+}
+
+.list--highlight {
+	margin-bottom: $gutter;
+	color: $brand-highlight;
+
+	li + li { margin-top: .5rem; }
+
+	li > span { color: $text-color; }
+}
+
+hr {
+	@include margin($gutter null);
+	@include border-width(1px 0 0);
+	border-top: $border-default;
+}
+
+td {
+	padding-right: $gutter;
+
+	&:last-of-type { padding-right: 0; }
+
+	.card & {
+		vertical-align: top;
+
+		@include breakpoint($bp-hands-max, max) {
+			display: block;
+			width: 100%;
+			padding-right: 0;
+		}
+	}
+}

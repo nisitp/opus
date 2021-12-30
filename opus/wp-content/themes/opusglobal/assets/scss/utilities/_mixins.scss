@@ -1,0 +1,162 @@
+/* Target IE10+ with specific styles */
+@mixin ie-only() {
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		@content;
+	}
+}
+
+// Renamed to not conflict with Bourbon clearfix mixin.
+@mixin ut-clearfix() {
+	clear: both;
+	zoom: 1;
+
+	&::before,
+	&::after {
+		display: table;
+		content: "";
+	}
+
+	&::after { clear: both; }
+}
+
+//
+// Quickly set hover and focus styles.
+@mixin hf {
+	&:hover,
+	&:focus { @content; }
+}
+
+@mixin hover-fade {
+	-o-transition:.3s;
+	-ms-transition:.3s;
+	-moz-transition:.3s;
+	-webkit-transition:.3s;
+	transition:.3s;
+}
+
+@mixin breakpoint($breakpoint, $width: min) {
+	@media (#{$width}-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin breakheight($breakheight, $height: min) {
+	@media (#{$height}-height: $breakheight) {
+		@content;
+	}
+}
+
+@mixin breaksize($breakwidth, $width, $breakheight, $height) {
+	@media (#{$width}-width: $breakwidth) and (#{$height}-height: $breakheight) {
+		@content;
+	}
+}
+
+@mixin vertical-align($position: relative) {
+	position: $position;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin transition($transition: .25s ease-out) {
+	$prefixes:      ("-webkit", "-ms", "-o");
+
+	@each $prefix in $prefixes {
+		#{$prefix}-transition: $transition;
+	}
+
+	transition: $transition;
+}
+
+@mixin triple-gradient($primary, $primary-start, $primary-stop, $secondary, $secondary-start, $secondary-stop, $tertiary, $tertiary-start, $tertiary-stop, $deg: 0deg) {
+	background: $secondary;
+	background: linear-gradient($deg, $primary $primary-start, $primary $primary-stop, $secondary $secondary-start, $secondary $secondary-stop, $tertiary $tertiary-start, $tertiary $tertiary-start);
+}
+
+// From Neat to-deprecate.scss, which isn't imported.
+/// Resets the active display property to `block`. Particularly useful when changing the display property in a single row.
+///
+/// @example scss - Usage
+///   .element {
+///     @include row(table);
+///     // Context changed to table display
+///   }
+///
+///   @include reset-display;
+///   // Context is reset to block display
+
+@mixin reset-display {
+	$container-display-table: false !global;
+
+	@include -neat-warn("Resetting $display will be deprecated in future versions in favor of the display(){...} mixin.");
+}
+
+// Shared style mixins
+@mixin nav-link {
+	padding: $gutter;
+	color: inherit;
+	font-size: $font-size-small;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+@mixin footer-flush {
+    // Negative margin when the last item to be flush with `.footer`
+    margin-bottom: -2.5rem;
+
+    @include breakpoint($bp-hands) {
+        margin-bottom: -3.75rem;
+    }
+
+    @include breakpoint($bp-desk) {
+        margin-bottom: -6.25rem;
+    }
+}
+
+// Listing Block feature, appearing in row and grid form. listing-block()
+// should be the direct parent of listing-block-contents() elements.
+@mixin listing-block {
+	display: flex;
+	padding: .5rem;
+	border: $border-default;
+	background-color: $bg-body;
+
+	@include breakpoint($bp-hands, min) {
+		padding: .875rem;
+	}
+
+	@include breakpoint($bp-desk, min) {
+		padding: 1rem;
+	}
+}
+
+@mixin listing-block-contents {
+	width: 100%;
+	min-height: 100%;
+	padding: 1rem;
+	background-color: $bg-offset;
+}
+
+.clearfix {
+	@include ut-clearfix;
+}
+
+// Neat grid framework addition.
+@mixin omega-reset($nth) {
+	&:nth-child(#{$nth}) {
+		margin-right: flex-gutter();
+	}
+
+	&:nth-child(#{$nth} + 1) {
+		clear: none;
+	}
+}
+
+@mixin pill-style {
+	padding: .25rem .875rem;
+	// Border radius exceeding element size for pill shape.
+	// See: http://stackoverflow.com/a/18795153/888550
+	border-radius: 500px;
+	line-height: 1;
+	text-transform: none;
+}

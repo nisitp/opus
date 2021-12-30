@@ -1,0 +1,31 @@
+%hero-height {
+	width: auto;
+	max-width: none;
+	height: 25rem;
+
+
+	@include breakpoint ($bp-hands, min) {
+		height: 34rem;
+	}
+
+	@include breakpoint ($bp-hands-wide, min) {
+		height: 64rem;
+	}
+}
+
+%panel-padding {
+	@include margin(0 null);
+	@include padding(3.75rem null);
+
+	@include breakpoint($bp-desk, min) {
+		@include padding(6.25rem null);
+	}
+}
+
+%panel-margin {
+	@include margin(3.75rem null);
+
+	@include breakpoint($bp-desk, min) {
+		@include margin(6.25rem null);
+	}
+}

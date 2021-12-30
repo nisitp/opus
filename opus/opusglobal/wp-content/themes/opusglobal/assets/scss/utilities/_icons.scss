@@ -1,0 +1,194 @@
+@font-face {
+	font-family: "theme-icons";
+	src: url('../fonts/theme-icons.eot');
+	src: url('../fonts/theme-icons.eot?#iefix') format('eot'),
+		url('../fonts/theme-icons.woff2') format('woff2'),
+		url('../fonts/theme-icons.woff') format('woff'),
+		url('../fonts/theme-icons.ttf') format('truetype'),
+		url('../fonts/theme-icons.svg#theme-icons') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "theme-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == chevron-down {
+		$char: unquote("\"")+unquote(str-insert(E001,"\\", 1))+unquote("\"");
+	}
+	@if $filename == chevron-right {
+		$char: unquote("\"")+unquote(str-insert(E002,"\\", 1))+unquote("\"");
+	}
+	@if $filename == department {
+		$char: unquote("\"")+unquote(str-insert(E003,"\\", 1))+unquote("\"");
+	}
+	@if $filename == footer-icon-blog {
+		$char: unquote("\"")+unquote(str-insert(E004,"\\", 1))+unquote("\"");
+	}
+	@if $filename == footer-icon-careers {
+		$char: unquote("\"")+unquote(str-insert(E005,"\\", 1))+unquote("\"");
+	}
+	@if $filename == footer-icon-contact {
+		$char: unquote("\"")+unquote(str-insert(E006,"\\", 1))+unquote("\"");
+	}
+	@if $filename == footer-icon-social-facebook {
+		$char: unquote("\"")+unquote(str-insert(E007,"\\", 1))+unquote("\"");
+	}
+	@if $filename == footer-icon-social-linked-in {
+		$char: unquote("\"")+unquote(str-insert(E008,"\\", 1))+unquote("\"");
+	}
+	@if $filename == footer-icon-social-twitter {
+		$char: unquote("\"")+unquote(str-insert(E009,"\\", 1))+unquote("\"");
+	}
+	@if $filename == footer-icon-social-youtube {
+		$char: unquote("\"")+unquote(str-insert(E00A,"\\", 1))+unquote("\"");
+	}
+	@if $filename == icon-arrow-right {
+		$char: unquote("\"")+unquote(str-insert(E00B,"\\", 1))+unquote("\"");
+	}
+	@if $filename == icon-circle {
+		$char: unquote("\"")+unquote(str-insert(E00C,"\\", 1))+unquote("\"");
+	}
+	@if $filename == icon-opus-gray {
+		$char: unquote("\"")+unquote(str-insert(E00D,"\\", 1))+unquote("\"");
+	}
+	@if $filename == insights-icon-event {
+		$char: unquote("\"")+unquote(str-insert(E00E,"\\", 1))+unquote("\"");
+	}
+	@if $filename == insights-icon-video {
+		$char: unquote("\"")+unquote(str-insert(E00F,"\\", 1))+unquote("\"");
+	}
+	@if $filename == map-pin {
+		$char: unquote("\"")+unquote(str-insert(E010,"\\", 1))+unquote("\"");
+	}
+	@if $filename == plus {
+		$char: unquote("\"")+unquote(str-insert(E011,"\\", 1))+unquote("\"");
+	}
+	@if $filename == search {
+		$char: unquote("\"")+unquote(str-insert(E012,"\\", 1))+unquote("\"");
+	}
+	@if $filename == solutions-icons-Alacra-Compliance-Enterprise {
+		$char: unquote("\"")+unquote(str-insert(E013,"\\", 1))+unquote("\"");
+	}
+	@if $filename == solutions-icons-Alacra-Surveillance {
+		$char: unquote("\"")+unquote(str-insert(E014,"\\", 1))+unquote("\"");
+	}
+	@if $filename == solutions-icons-Hiperos-3PM {
+		$char: unquote("\"")+unquote(str-insert(E015,"\\", 1))+unquote("\"");
+	}
+	@if $filename == solutions-icons-Hiperos-Network {
+		$char: unquote("\"")+unquote(str-insert(E016,"\\", 1))+unquote("\"");
+	}
+	@if $filename == solutions-icons-RD-Concordance-Service {
+		$char: unquote("\"")+unquote(str-insert(E017,"\\", 1))+unquote("\"");
+	}
+	@if $filename == solutions-icons-RD-Legal-Entity-Directory {
+		$char: unquote("\"")+unquote(str-insert(E018,"\\", 1))+unquote("\"");
+	}
+	@if $filename == solutions-icons-RD-Opus-Authority-File {
+		$char: unquote("\"")+unquote(str-insert(E019,"\\", 1))+unquote("\"");
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-chevron-down {
+	@include icon(chevron-down);
+}
+.icon-chevron-right {
+	@include icon(chevron-right);
+}
+.icon-department {
+	@include icon(department);
+}
+.icon-footer-icon-blog {
+	@include icon(footer-icon-blog);
+}
+.icon-footer-icon-careers {
+	@include icon(footer-icon-careers);
+}
+.icon-footer-icon-contact {
+	@include icon(footer-icon-contact);
+}
+.icon-footer-icon-social-facebook {
+	@include icon(footer-icon-social-facebook);
+}
+.icon-footer-icon-social-linked-in {
+	@include icon(footer-icon-social-linked-in);
+}
+.icon-footer-icon-social-twitter {
+	@include icon(footer-icon-social-twitter);
+}
+.icon-footer-icon-social-youtube {
+	@include icon(footer-icon-social-youtube);
+}
+.icon-icon-arrow-right {
+	@include icon(icon-arrow-right);
+}
+.icon-icon-circle {
+	@include icon(icon-circle);
+}
+.icon-icon-opus-gray {
+	@include icon(icon-opus-gray);
+}
+.icon-insights-icon-event {
+	@include icon(insights-icon-event);
+}
+.icon-insights-icon-video {
+	@include icon(insights-icon-video);
+}
+.icon-map-pin {
+	@include icon(map-pin);
+}
+.icon-plus {
+	@include icon(plus);
+}
+.icon-search {
+	@include icon(search);
+}
+.icon-solutions-icons-Alacra-Compliance-Enterprise {
+	@include icon(solutions-icons-Alacra-Compliance-Enterprise);
+}
+.icon-solutions-icons-Alacra-Surveillance {
+	@include icon(solutions-icons-Alacra-Surveillance);
+}
+.icon-solutions-icons-Hiperos-3PM {
+	@include icon(solutions-icons-Hiperos-3PM);
+}
+.icon-solutions-icons-Hiperos-Network {
+	@include icon(solutions-icons-Hiperos-Network);
+}
+.icon-solutions-icons-RD-Concordance-Service {
+	@include icon(solutions-icons-RD-Concordance-Service);
+}
+.icon-solutions-icons-RD-Legal-Entity-Directory {
+	@include icon(solutions-icons-RD-Legal-Entity-Directory);
+}
+.icon-solutions-icons-RD-Opus-Authority-File {
+	@include icon(solutions-icons-RD-Opus-Authority-File);
+}

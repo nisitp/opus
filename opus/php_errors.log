@@ -1,0 +1,40 @@
+[30-Jun-2017 19:34:22 UTC] PHP Notice:  Array to string conversion in /home/vagrant/UpTrending/opusglobal.com/wp-content/themes/opusglobal/partials/hero-home.php on line 47
+[30-Jun-2017 19:34:22 UTC] PHP Stack trace:
+[30-Jun-2017 19:34:22 UTC] PHP   1. {main}() /home/vagrant/UpTrending/opusglobal.com/index.php:0
+[30-Jun-2017 19:34:22 UTC] PHP   2. require() /home/vagrant/UpTrending/opusglobal.com/index.php:17
+[30-Jun-2017 19:34:22 UTC] PHP   3. require_once() /home/vagrant/UpTrending/opusglobal.com/wp-blog-header.php:19
+[30-Jun-2017 19:34:22 UTC] PHP   4. include() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template-loader.php:74
+[30-Jun-2017 19:34:22 UTC] PHP   5. get_template_part() /home/vagrant/UpTrending/opusglobal.com/wp-content/themes/opusglobal/front-page.php:10
+[30-Jun-2017 19:34:22 UTC] PHP   6. locate_template() /home/vagrant/UpTrending/opusglobal.com/wp-includes/general-template.php:167
+[30-Jun-2017 19:34:22 UTC] PHP   7. load_template() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template.php:643
+[30-Jun-2017 19:34:22 UTC] PHP   8. require() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template.php:686
+[30-Jun-2017 19:34:22 UTC] PHP Notice:  Array to string conversion in /home/vagrant/UpTrending/opusglobal.com/wp-content/themes/opusglobal/partials/hero-home.php on line 47
+[30-Jun-2017 19:34:22 UTC] PHP Stack trace:
+[30-Jun-2017 19:34:22 UTC] PHP   1. {main}() /home/vagrant/UpTrending/opusglobal.com/index.php:0
+[30-Jun-2017 19:34:22 UTC] PHP   2. require() /home/vagrant/UpTrending/opusglobal.com/index.php:17
+[30-Jun-2017 19:34:22 UTC] PHP   3. require_once() /home/vagrant/UpTrending/opusglobal.com/wp-blog-header.php:19
+[30-Jun-2017 19:34:22 UTC] PHP   4. include() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template-loader.php:74
+[30-Jun-2017 19:34:22 UTC] PHP   5. get_template_part() /home/vagrant/UpTrending/opusglobal.com/wp-content/themes/opusglobal/front-page.php:10
+[30-Jun-2017 19:34:22 UTC] PHP   6. locate_template() /home/vagrant/UpTrending/opusglobal.com/wp-includes/general-template.php:167
+[30-Jun-2017 19:34:22 UTC] PHP   7. load_template() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template.php:643
+[30-Jun-2017 19:34:22 UTC] PHP   8. require() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template.php:686
+[30-Jun-2017 19:34:22 UTC] PHP Notice:  Array to string conversion in /home/vagrant/UpTrending/opusglobal.com/wp-content/themes/opusglobal/partials/hero-home.php on line 47
+[30-Jun-2017 19:34:22 UTC] PHP Stack trace:
+[30-Jun-2017 19:34:22 UTC] PHP   1. {main}() /home/vagrant/UpTrending/opusglobal.com/index.php:0
+[30-Jun-2017 19:34:22 UTC] PHP   2. require() /home/vagrant/UpTrending/opusglobal.com/index.php:17
+[30-Jun-2017 19:34:22 UTC] PHP   3. require_once() /home/vagrant/UpTrending/opusglobal.com/wp-blog-header.php:19
+[30-Jun-2017 19:34:22 UTC] PHP   4. include() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template-loader.php:74
+[30-Jun-2017 19:34:22 UTC] PHP   5. get_template_part() /home/vagrant/UpTrending/opusglobal.com/wp-content/themes/opusglobal/front-page.php:10
+[30-Jun-2017 19:34:22 UTC] PHP   6. locate_template() /home/vagrant/UpTrending/opusglobal.com/wp-includes/general-template.php:167
+[30-Jun-2017 19:34:22 UTC] PHP   7. load_template() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template.php:643
+[30-Jun-2017 19:34:22 UTC] PHP   8. require() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template.php:686
+[30-Jun-2017 19:54:30 UTC] PHP Notice:  Array to string conversion in /home/vagrant/UpTrending/opusglobal.com/wp-content/themes/opusglobal/partials/hero-home.php on line 56
+[30-Jun-2017 19:54:30 UTC] PHP Stack trace:
+[30-Jun-2017 19:54:30 UTC] PHP   1. {main}() /home/vagrant/UpTrending/opusglobal.com/index.php:0
+[30-Jun-2017 19:54:30 UTC] PHP   2. require() /home/vagrant/UpTrending/opusglobal.com/index.php:17
+[30-Jun-2017 19:54:30 UTC] PHP   3. require_once() /home/vagrant/UpTrending/opusglobal.com/wp-blog-header.php:19
+[30-Jun-2017 19:54:30 UTC] PHP   4. include() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template-loader.php:74
+[30-Jun-2017 19:54:30 UTC] PHP   5. get_template_part() /home/vagrant/UpTrending/opusglobal.com/wp-content/themes/opusglobal/front-page.php:10
+[30-Jun-2017 19:54:30 UTC] PHP   6. locate_template() /home/vagrant/UpTrending/opusglobal.com/wp-includes/general-template.php:167
+[30-Jun-2017 19:54:30 UTC] PHP   7. load_template() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template.php:643
+[30-Jun-2017 19:54:30 UTC] PHP   8. require() /home/vagrant/UpTrending/opusglobal.com/wp-includes/template.php:686

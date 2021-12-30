@@ -1,0 +1,16 @@
+.page-grid {
+  @include simple-grid();
+  
+  > li {
+    > a {
+      padding: 0 20px 20px 20px;
+    }
+
+    border-radius: 16px;
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px dotted $orange;
+      background: tint($orange, 95%);
+    }
+  }
+}

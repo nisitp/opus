@@ -1,0 +1,19 @@
+.profile {
+	@include row;
+}
+
+.profile__main {
+	@include breakpoint($bp-hands) {
+		@include span-columns(7 of 12);
+	}
+}
+
+.profile__aside {
+	@include breakpoint($bp-hands) {
+		@include breakpoint($bp-hands) {
+			@include span-columns(5 of 12);
+			margin-right: 0;
+			float: right;
+		}
+	}
+}

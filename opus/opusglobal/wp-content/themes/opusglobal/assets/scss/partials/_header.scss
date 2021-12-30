@@ -1,0 +1,95 @@
+//
+// Header
+//
+
+.header {
+	position: relative;
+	box-shadow: none;
+	z-index: 20; // Used to keep shadow on top of lower regions.
+
+	.hamburger {
+		margin-right: -$hamburger-padding-x;
+	}
+}
+
+.header__contents {
+	@include l-content;
+	@include margin(null auto);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 5rem;
+
+	max-width: 1200px;
+	padding-right: 16px;
+	padding-left: 16px;
+
+	@include breakpoint($bp-partial-nav) {
+		min-height: 5.25rem;
+	}
+
+	@include breakpoint($bp-full-nav) {
+		min-height: 6rem;
+	}
+}
+
+.header__utility {
+	display: flex;
+	align-items: center;
+
+	@include breakpoint($bp-full-nav) {
+		display: none;
+	}
+
+	.button { margin-right: $gutter-half; }
+}
+
+.header__logo {
+	display: inline-flex;
+	align-self: stretch;
+
+	@include breakpoint($bp-full-nav) {
+		margin-right: $gutter-half;
+	}
+
+	.icon-link {
+		display: inline-block;
+		width: rem(120px);
+		min-height: 100%;
+		background: url("../img/logo-opus.svg") no-repeat;
+		background-position: left center;
+
+		@include breakpoint($bp-hands) {
+			width: rem(136px);
+		}
+
+		@include breakpoint($bp-hands-wide) {
+			width: rem(158px);
+		}
+	}
+}
+
+.header__nav {
+	display: none;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100vh - 5rem);
+	background-color: $brand-primary;
+	z-index: 6;
+
+	@include breakpoint($bp-full-nav) {
+		display: inline-flex;
+		position: static;
+		flex-grow: 1;
+		align-items: stretch;
+		align-self: stretch;
+		justify-content: space-between;
+		width: auto;
+		height: auto;
+		background: none;
+		z-index: initial;
+	}
+}

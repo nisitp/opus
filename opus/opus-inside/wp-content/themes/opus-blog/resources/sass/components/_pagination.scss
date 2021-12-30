@@ -1,0 +1,23 @@
+.pagination {
+    border-top: 3px solid #d0d3d4;
+    margin-top: 40px;
+    text-align: center;
+
+    &__link {
+        margin: 0 auto;
+        display: inline-block;
+        padding: 0px 15px;
+        background: #ffffff;
+        position: relative;
+        top: -12px;
+        font-weight: bold;
+        text-decoration: none;
+
+        &--loading {
+            color: rgba(255, 255, 255, 0);
+            background-image: url('../img/loading.gif');
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+}

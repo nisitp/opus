@@ -1,0 +1,55 @@
+.callout {
+	margin-bottom: $gutter;
+
+	.panel--sidebar .l-col-secondary & {
+		@include breakpoint($bp-hands, min) {
+			@include span-columns(6 of 12);
+			@include omega(2n);
+		}
+
+		@include breakpoint($bp-hands-wide, min) {
+			@include span-columns(12 of 12);
+		}
+	}
+}
+
+
+
+.callout--stat {
+	padding: $gutter 0;
+	border-width: 2px 0;
+	border-style: solid;
+	border-color: currentColor;
+	color: $brand-highlight;
+	text-align: center;
+
+	.panel--sidebar .l-col-secondary & + & {
+		margin-top: -$gutter;
+		border-top-width: 0;
+
+		@media screen and (min-width: $bp-hands) and (max-width: $bp-hands-max) {
+			margin-top: 0;
+			border-top-width: 2px;
+		}
+	}
+}
+
+.callout--stat__number {
+	font-size: 5rem;
+	font-weight: 700;
+
+	@include breakpoint($bp-hands, min) {
+		font-size: 4rem;
+	}
+
+	@include breakpoint($bp-desk, min) {
+		font-size: 5rem;
+	}
+}
+
+.callout--stat__label {
+	max-width: 80%;
+    margin: 0 auto;
+	font-size: 1rem;
+	text-transform: uppercase;
+}

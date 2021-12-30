@@ -1,0 +1,20 @@
+.testimonial--split {
+	margin-bottom: $gutter;
+
+	@include breakpoint($bp-hands-wide) {
+		display: flex;
+
+		> .testimonial__section {
+			flex: 1;
+
+			+ .testimonial__section {
+				margin-left: $gutter;
+			}
+		}
+	}
+
+	img {
+		padding: .75rem;
+		border: $border-default;
+	}
+}

@@ -1,0 +1,179 @@
+.accordion {
+	> li > a {
+		font-weight: normal;
+	}
+
+	.is-expanded { display: block; }
+
+	.accordion-list & {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		transition:
+			margin $transition-timing,
+			padding $transition-timing,
+			border-top-width $transition-timing,
+			border-right-width $transition-timing;
+
+		@include ie-only{
+			max-width: 100%;
+		}
+
+		&.is-expanded {
+			@include l-ungutter;
+			@include padding(null (($gutter / 2) + .5rem));
+
+			@include breakpoint($bp-hands-wide, min) {
+				@include padding(null ($gutter + 1.125rem));
+			}
+
+			@include breakpoint($bp-hands-wide-max, max) {
+				@include border-width(0 0 null);
+			}
+
+			@media screen and (min-width: $bp-desk) {
+				@include margin(null 0);
+				@include padding(null 1rem);
+			}
+		}
+	}
+
+	.isotope-row & {
+		// Preventing the Isotope filtering library from disrupting layout.
+		left: 0 !important;
+	}
+}
+
+.accordion-list {
+	@include l-content;
+	@include margin(-1.25rem auto null);
+	list-style: none;
+
+	@media screen and (min-width: $bp-desk) {
+		max-width: $max-width + 12.5rem;
+		margin-top: -4.75rem;
+	}
+}
+
+.accordion__toggle {
+	.accordion-list & {
+		@include position(absolute, 0 0 null);
+		display: none;
+		width: 100%;
+		height: $gutter;
+		padding: 0;
+		border-radius: 0;
+		background-color: $brand-secondary;
+		font-size: .5rem;
+		z-index: 1;
+
+		&::before {
+			@include position(absolute, 50% null null);
+			transform: translateY(-50%);
+			transition: transform $transition-timing;
+		}
+
+		@media screen and (min-width: $bp-hands) {
+			height: 3.125rem;
+
+			&::before {
+				font-size: .75rem;
+			}
+		}
+
+		@media screen and (min-width: $bp-desk) {
+			@include position(absolute, -1px null 0 -1px);
+			width: 3.125rem;
+			height: auto;
+
+			&::before {
+				@include position(absolute, 6.25rem null null 50%);
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	.accordion-list .is-expanded & {
+		display: block;
+
+		&::before {
+			transform: translateY(-50%) rotate(180deg);
+
+			@media screen and (min-width: $bp-desk) {
+				transform: translateX(-50%) rotate(180deg);
+			}
+		}
+	}
+
+	.accordion-list .accordion:hover &,
+	.accordion-list .accordion:focus & {
+		@media screen and (min-width: $bp-desk) {
+			display: block;
+		}
+	}
+}
+
+.accordion__header {
+	.accordion-list & {
+		transition:
+			background-color $transition-timing,
+			margin-top $transition-timing;
+	}
+
+	@media screen and (min-width: $bp-desk) {
+		.accordion-list .accordion:hover &,
+		.accordion-list .accordion:focus & {
+			position: relative;
+		}
+	}
+
+	.accordion-list .is-expanded & {
+		margin-top: $gutter;
+		background-color: $bg-body;
+
+		@media screen and (min-width: $bp-hands) {
+			margin-top: 3.125rem;
+		}
+
+		@media screen and (min-width: $bp-desk) {
+			margin-top: 0;
+		}
+	}
+}
+
+.accordion__body {
+	max-height: 0;
+	transition: max-height ease-out .5s;
+	overflow: hidden;
+
+	.accordion-list & {
+		@include margin(null 1rem);
+		transition:
+			max-height ease-out .5s,
+			padding ease-out $transition-timing;
+		background-color: $bg-body;
+
+		@media screen and (min-width: $bp-desk) {
+			// Padding is increase in max-width from accordion-list minus
+			// info-block padding.
+			@include margin(null (6.25rem - 1rem));
+		}
+	}
+
+	.is-expanded & {
+        // Large value chosen since `none` wouldn't work for the transition.
+		max-height: 200rem;
+		transition-duration: 1s;
+		overflow: scroll;
+
+		.accordion-list & {
+			@include padding($gutter null);
+			transition: max-height ease-out .5s;
+			border-top: $border-default;
+
+			@media screen and (min-width: $bp-desk) {
+				@include padding(3.75rem null);
+			}
+		}
+	}
+}

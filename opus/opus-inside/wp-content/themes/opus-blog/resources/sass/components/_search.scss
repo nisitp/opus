@@ -1,0 +1,30 @@
+.search {
+    @include clearfix;
+
+    &__input {
+        display: block;
+        float: left;
+        font-family: inherit;
+        font-size: inherit;
+        width: calc(100% - 43px);
+        max-width: 300px;
+        height: 43px;
+        border: 1px solid #d0d3d4;
+        border-right: none;
+        padding: 10px;
+        color: #072b49;
+        outline-width: 0px;
+        border-right: 0px;
+        box-sizing: border-box;
+    }
+
+    &__submit {
+        display: block;
+        float: left;
+        height: 43px;
+        width: 43px;
+        background: #f26727;
+        border: none;
+        color: #ffffff;
+    }
+}

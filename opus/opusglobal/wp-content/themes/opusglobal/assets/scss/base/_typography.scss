@@ -1,0 +1,102 @@
+.text-white { color: $white; }
+.text-highlight { color: $brand-highlight; }
+.text-body-color { color: $text-color; }
+
+.text-meta,
+.text-meta:visited,
+.text-subtle { color: $gray-dark; }
+
+a.text-meta {
+	@include hf {
+		color: $link-color;
+	}
+}
+
+.text-uppercase { text-transform: uppercase; }
+.text-no-transform { text-transform: none; }
+
+.text-body {
+	font-size: .875rem;
+	letter-spacing: .075em;
+	line-height: 1.5;
+
+	@include breakpoint($bp-hands) {
+		font-size: 1rem;
+	}
+}
+
+.text--small { font-size: $font-size-small; }
+
+.text-center { text-align: center; }
+
+.text-normal { font-weight: normal !important; }
+
+.text-unheading {
+	// Used when heading sizes are needed, but not the other styling.
+	margin-bottom: 0;
+	color: inherit;
+	font-weight: normal;
+	line-height: $line-height-body;
+}
+
+.text--quote {
+	&::before {
+		content: "“";
+	}
+
+	&::after {
+		content: "”";
+	}
+}
+
+blockquote {
+	@include breakpoint($bp-hands) {
+		font-size: 1.125rem;
+	}
+
+	.blockquote__attribution {
+		font-size: $font-size-small;
+		text-transform: uppercase;
+	}
+}
+
+.link--null {
+	color: inherit;
+
+	&:hover,
+	&:active,
+	&:focus {
+		border-bottom: 0;
+	}
+
+	&:active { background-color: transparent; }
+
+	&:visited { color: inherit; }
+}
+
+// Linked images to remove hover effects
+// @TODO see if this can be removed and replaced with .link--null
+.link--static {
+	&:hover,
+	&:active,
+	&:focus {
+		border-bottom: 0;
+	}
+}
+
+.heading--page {
+	margin-bottom: 3.75rem;
+
+	@include breakpoint($bp-partial-nav) {
+		margin-bottom: 6 .25rem;
+	}
+}
+
+.text--pill {
+	@include pill-style;
+	background-color: $brand-highlight;
+	color: $white;
+	font-size: .875rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}

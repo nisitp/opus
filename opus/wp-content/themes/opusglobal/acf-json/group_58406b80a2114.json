@@ -1,0 +1,141 @@
+{
+    "key": "group_58406b80a2114",
+    "title": "Global - Hero options",
+    "fields": [
+        {
+            "key": "field_58406b8775a49",
+            "label": "Show Breadcrumbs",
+            "name": "hero_breadcrumbs",
+            "type": "radio",
+            "instructions": "Show breadcrumbs above hero title. This will not display on top-level landing pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "horizontal",
+            "choices": {
+                "true": "Yes",
+                "false": "No"
+            },
+            "default_value": "true",
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_58406bd175a4a",
+            "label": "Background Image",
+            "name": "hero_bg",
+            "type": "image",
+            "instructions": "Optional, defaults brand blue",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 1600,
+            "min_height": 400,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5863e0ec3d0fd",
+            "label": "Override Title",
+            "name": "override_title",
+            "type": "true_false",
+            "instructions": "Optionally use a banner title other than the page title. You will also need to do any text formatting manually (e.g., bolding, italics).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "message": "",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5863db26699fe",
+            "label": "Hero Title Override",
+            "name": "hero_title_override",
+            "type": "wysiwyg",
+            "instructions": "Enter text here if you want to display something other than the page title. You can also use basic text formatting, including bolding and italics. Other formatting will be ignored.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5863e0ec3d0fd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "default_value": "",
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/page_feature.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-partners.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-customers.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1498042611
+}

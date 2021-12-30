@@ -1,0 +1,134 @@
+// Based on dropdown from Bourbon empties. http://empties.bourbon.io/
+// Example markup:
+// <div class="dropdown">
+//	 <div class="dropdown-container">
+//	 	<p class="dropdown-description">Description</p>
+//	 	<button class="dropdown-button">Click to Select</button>
+//	 	<ul class="dropdown-menu dropdown-select">
+//	 		<li>Dropdown Menu Item</li>
+//	 		<li>Another Item</li>
+//	 		<li>Item Three</li>
+//	 		<li>The Last One</li>
+//	 	</ul>
+//	 </div>
+// </div>
+
+$dropdown-distance-from-menu: 100%;
+$dropdown-color-inverse: #56738f;
+
+.dropdown {
+	display: inline-block;
+
+	.dropdown-row & {
+		display: block;
+		flex: 1;
+
+		+ .dropdown {
+			margin-top: .5rem;
+
+			@include breakpoint($bp-hands) {
+				margin-top: 0;
+				margin-left: $gutter;
+			}
+		}
+	}
+}
+
+.dropdown-row {
+	display: flex;
+	flex-direction: column;
+
+	@include breakpoint($bp-hands) {
+		flex-direction: row;
+	}
+
+	@include breakpoint($bp-desk) {
+		@include span-columns(6 of 12);
+		display: flex;
+	}
+}
+
+.dropdown-container {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+.dropdown-description {
+	padding-right: 1em;
+	float: left;
+}
+
+.dropdown-button {
+	@include transition;
+	@include icon(chevron-down, after);
+	position: relative;
+	width: 100%;
+	padding: 1rem 3.25rem 1rem 1.5rem;
+	border-radius: $border-radius;
+	background-color: $dropdown-color-inverse;
+	font-family: $font-stack;
+	font-size: 1rem;
+	font-weight: normal;
+	text-align: left;
+	text-transform: none;
+	cursor: pointer;
+
+	@include hf {
+		background-color: $dropdown-color-inverse;
+	}
+
+	&::after {
+		@include position(absolute, 50% 1.5rem null null);
+		display: block;
+		transform: translateY(-50%);
+		font-size: .75em;
+	}
+
+	.dropdown-description + & { float: right; }
+
+	.is-active & {
+		@include border-bottom-radius(0);
+	}
+}
+
+.dropdown-menu {
+	@include transition (all .2s ease-in-out);
+	@include border-bottom-radius($border-radius);
+	display: none;
+	position: absolute;
+	top: $dropdown-distance-from-menu;
+	width: 100%;
+	padding-left: 0;
+	background-color: $dropdown-color-inverse;
+	list-style: none;
+	text-align: left;
+	cursor: pointer;
+	overflow: show;
+	z-index: 99999;
+
+	.is-active & { display: block; }
+}
+
+.dropdown-select {
+	max-height: 19.25rem;
+	margin: 0;
+	padding: 0;
+	overflow-y: auto;
+}
+
+.dropdown__option {
+	display: inline-block;
+	width: 100%;
+	padding: 1rem 1.5rem;
+
+	&,
+	&:visited { color: $white; }
+
+	@include hf {
+		border-width: 0;
+		background-color: $brand-primary;
+		color: $white;
+	}
+}

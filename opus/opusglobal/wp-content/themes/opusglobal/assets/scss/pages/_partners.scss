@@ -1,0 +1,218 @@
+.page-template-page-partners-php {
+    header.banner{
+        background-image: url('../img/bg-final-cta.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .footer {
+        margin-top: 0px;
+    }
+}
+
+.all-partners {
+    float: left;
+    width: 100%;
+}
+
+.partner-section {
+    float: left;
+    width: 100%;
+    padding: 40px 0;
+    @include breakpoint($bp-charlie) {
+        padding: 100px 0;
+    }
+    h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &.alt {
+        background: #fafafa;
+    }
+}
+
+.all-partners-logos {
+    .partner-logos {
+        @include breakpoint($bp-charlie) {
+            &:nth-child(4n+4), &:nth-child(4n+3) {
+                .tooltip {
+                    left: auto;
+                    right: 110% !important;
+                    &:after{
+                        bottom: 100%;
+                        right: 50%;
+                        border: solid transparent;
+                        content: " ";
+                        height: 0;
+                        width: 0;
+                        position: absolute;
+                        pointer-events: none;
+                        border-color: rgba(255, 104, 0, 0);
+                        border-bottom-color: #ff6800;
+                        border-width: 10px;
+                        margin-top: -10px;
+
+                        @include breakpoint($bp-charlie) {
+                            top: 50%;
+                            bottom: auto;
+                            left: 100%;
+                            margin-top: -10px;
+                            border-bottom-color: transparent;
+                            border-right-color: #ff6800;
+                            -webkit-transform: rotate(180deg);
+                            -moz-transform: rotate(180deg);
+                            -o-transform: rotate(180deg);
+                            -ms-transform: rotate(180deg);
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.partner-logos {
+    padding: 0 10px;
+    @include breakpoint($bp-delta) {
+        margin: 0 -15px;
+    }
+}
+
+.partner-logo {
+    width: 100%;
+    float: left;
+    padding: 0 5px 15px;
+    @include breakpoint($bp-charlie) {
+        width: 33.33%;
+    }
+    @include breakpoint($bp-delta) {
+        width: 25%;
+        padding: 0 15px 25px;
+    }
+}
+
+.inner-partner-logo {
+    float: left;
+    width: 100%;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    height: 130px;
+    background: white;
+    position: relative;
+    @include hover-fade();
+
+    a {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        &:hover {
+            border: 0px;
+        }
+    }
+    img {
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: table;
+        @include vertical-align();
+        @include breakpoint($bp-charlie) {
+            max-width: 180px;
+        }
+    }
+
+    .tooltip{
+        pointer-events: none;
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        background: #ff6800;
+        padding: 20px;
+        color: #fff;
+        width: 80vw;
+        opacity: 0;
+        transition: opacity 0.2s;
+        transform: translateX( -50% );
+        z-index: 9999;
+        @include breakpoint($bp-charlie) {
+            left: 110%;
+            top: 50%;
+            transform: translateY( -50% );
+            width: 550px;
+            max-width: 50vw;
+        }
+
+        p:last-child{
+            margin-bottom: 0;
+        }
+
+        &:after{
+            bottom: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 104, 0, 0);
+            border-bottom-color: #ff6800;
+            border-width: 10px;
+            margin-top: -10px;
+
+            @include breakpoint($bp-charlie) {
+                right: 100%;
+                top: 50%;
+                bottom: auto;
+                left: auto;
+                margin-top: -10px;
+                border-bottom-color: transparent;
+                border-right-color: #ff6800;
+            }
+        }
+    }
+
+    &:hover {
+        border: 1px solid #ff6800;
+        .tooltip{
+            opacity: 1;
+        }
+    }
+}
+
+.partner-intro {
+    float: left;
+    width: 100%;
+    text-align: center;
+    @include breakpoint($bp-charlie) {
+        width: 70%;
+        margin: 0 auto 30px;
+        display: table;
+        float: none;
+    }
+    @include breakpoint($bp-delta) {
+        width: 75%;
+    }
+    p {
+        @include breakpoint($bp-charlie) {
+            font-size: 21px;
+            line-height: 140%;
+        }
+    }
+}
+
+.partner-final-cta {
+    float: left;
+    width: 100%;
+    background: url(../img/bg-final-cta.jpg) no-repeat;
+    background-size: cover;
+    .l-col {
+        color: white;
+        h2 {
+            color: white;
+        }
+    }
+}

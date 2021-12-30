@@ -1,0 +1,49 @@
+.screenshot {
+	@include margin(null auto);
+	display: inline-block;
+	position: relative;
+	width: auto;
+	border: solid #e8e8e8;
+	border-width: 1.75em .0625rem .0625rem;
+	border-radius: 1em;
+	font-size: 2vw;
+	box-shadow: 0 1rem 3.125rem -1rem $brand-primary;
+
+	@include breakpoint($bp-desk, min) {
+		border-top-width: 2rem;
+		font-size: 1rem;
+
+	}
+
+	img {
+		display: block;
+		border-radius: 0 0 1em 1em;
+	}
+
+	&::before,
+	&::after {
+		display: inline-block;
+		position: absolute;
+		top: -1.425em;
+		left: 1rem;
+		color: $brand-primary;
+		font-size: 1em;
+		content: "•";
+
+		@include breakpoint($bp-desk, min) {
+			top: -1.875rem;
+			font-size: 1.25rem;
+		}
+	}
+
+	&::before { z-index: 1; }
+
+	&::after {
+		color: #969ea4;
+		content: "• • •";
+	}
+
+	.panel__body & {
+		max-width: 100%; // IE11 fix.
+	}
+}

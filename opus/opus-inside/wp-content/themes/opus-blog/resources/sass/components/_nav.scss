@@ -1,0 +1,64 @@
+.nav {
+
+//    background: $primary;
+    @include clearfix;
+    margin-top:80px;
+    margin-bottom: 20px;
+    
+    @include mq(tablet) {
+      margin-top: 0;
+    }
+
+    &__list {
+        padding: 0px;
+        margin: 0 auto;
+        list-style: none;
+        text-align: center;      
+      font-weight: 100;
+      border:1px solid tint($blue, 95%);
+
+        @include mq(tablet) {
+          @include grid-column(8);
+          font-size: 18px;    
+          margin-top: 130px;          
+          margin-bottom: 10px;
+        }
+        @include mqList((tablet, desktop)) {
+          @include grid-push(1);
+          text-align: left;
+        }
+        @include mq(desktop) {
+          margin-top: 110px;          
+        }
+
+
+        & > li {
+            display: inline-block;
+            line-height:2em;
+            padding: 0 10px 0 10px;
+
+/*
+            @include bp(tablet) {
+                padding: 0 40px 15px 0px;
+            }
+
+            @include bp(desktop) {
+                padding: 0 40px 15px 0px;
+            }
+*/
+
+            & > a {
+                color: $blue;
+                text-decoration: none;
+
+                &:hover {
+                    color: $blue-dark;
+                }
+            }
+            
+            &.current-menu-item {
+              font-weight: 600;
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+// Modal specific variables
+$close-icon-size: 1.25rem;
+$close-right-pos: 2.5rem;
+// End variables
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: opacity $transition-timing;
+	background-color: rgba($brand-primary, .97);
+	opacity: 0;
+	z-index: 50;
+	pointer-events: none;
+
+	&.opus-modals-open,
+	&.is-active {
+		opacity: 1;
+		overflow: auto;
+		pointer-events: auto;
+	}
+}
+
+.modal-container {
+	@include l-content;
+	margin: 2.5rem auto;
+
+	&--compressed {
+		max-width: 39.5rem;
+	}
+}
+
+.modal {
+	@include padding(5rem 1.25rem 1.875rem);
+	position: relative;
+	border-radius: 1.25rem;
+	background: url("../img/bg-pattern.png") repeat;
+
+	.modal__close {
+		@include position(absolute, 1.875rem 1.25rem null null);
+		width: $close-icon-size;
+		height: $close-icon-size;
+		margin-top: $close-right-pos;
+		background-image: url("../img/opus-modal-close.png");
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.modal--profile {
+	@include padding(null 1.25rem);
+
+	@include breakpoint($bp-hands) {
+		@include padding(null 1.875rem);
+	}
+
+	@include breakpoint($bp-desk) {
+		@include padding(null 4.375rem);
+	}
+}
+
+.modal--account {
+	@include padding($gutter null);
+	position: relative;
+	background: url("../img/bg-pattern.png") repeat;
+	background-size: 46px 23px;
+
+	.opus-modal-close {
+		position: absolute;
+		right: 2.5rem;
+		width: $close-icon-size;
+		height: $close-icon-size;
+		margin-top: .25rem;
+		background-image: url("../img/opus-modal-close.png");
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	h3 {
+		@include margin(null auto ($gutter * 2));
+
+		@include breakpoint($bp-palm-max, max) {
+			max-width: calc(100% - (2 * #{$close-icon-size}) - #{$gutter});
+		}
+	}
+
+	.modal__link-blocks {
+		padding-left: 0;
+
+		li {
+			margin-bottom: 1.25rem;
+			list-style: none;
+
+			a {
+				display: block;
+				padding: 1.5rem 3.75rem 1.5rem 2.5rem;
+				border: $border-default;
+				border-radius: $border-radius;
+				background-color: $white;
+				background-image: url("../img/login-arrow.png");
+				background-repeat: no-repeat;
+				background-position: right 1.25rem center;
+
+				&:hover,
+				&:focus {
+					border: 1px solid #ddd;
+					background-color: #eee;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,475 @@
+.listing,
+.listing--grid,
+.listing--blocks {
+	padding-left: 0;
+	list-style: none;
+}
+
+.listing {
+	border-top: $border-default;
+	border-top-width: 2px;
+}
+
+.listing--grid {
+	display: flex;
+	flex-wrap: wrap;
+	border: 0;
+}
+
+.listing--blocks,
+.listing--blocks--text {
+	@include padding(null 0);
+}
+
+.listing--blocks {
+	@include breakpoint($bp-hands) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	@include breakpoint($bp-hands-wide) {
+		justify-content: flex-start;
+	}
+
+	&--tight,
+	&--press,
+	&--sm {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&--text {
+		@include breakpoint($bp-hands) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+		}
+	}
+
+	&--m-b{
+		margin-bottom: 2rem;
+	}
+}
+
+.listing__item {
+	.listing & {
+		@include padding(1.5rem null);
+		border-bottom: $border-default;
+
+		&:last-child { border-bottom: 0; }
+	}
+
+	//
+	// Listing Grid variations
+	//
+	.listing--grid & {
+		@include listing-block;
+		display: flex;
+		min-height: 8.75rem;
+		float: left;
+		text-align: center;
+
+		// While in a single column, all but the first have no top border.
+		@include breakpoint($bp-zero-max, max) {
+			flex-grow: 1;
+
+			&:nth-child(n+2) { border-top-width: 0; }
+		}
+
+		// While in two columns, the 2nd column has no left border. Starting
+		// with the third there's no top border.
+		@include breakpoint($bp-palm, min) {
+			width: 50%;
+		}
+
+		@media screen and (min-width: $bp-palm) and (max-width: $bp-hands-max) {
+			&:nth-child(2n) { border-left-width: 0; }
+			&:nth-child(n+3) { border-top-width: 0; }
+		}
+
+		@include breakpoint($bp-hands, min) {
+			min-height: 12.5rem;
+		}
+
+		// While in four columns, starting with the fifth there's no top border. All but the 1st column have no left border.
+		@include breakpoint($bp-hands-wide, min) {
+			width: 25%;
+			border-left-width: 0;
+
+			&:nth-child(4n-3) { border-left-width: 1px; }
+			&:nth-child(n+5) { border-top-width: 0; }
+		}
+	}
+
+	.listing--grid &.listing__item--third {
+		// While in a single column, all but the first have no top border.
+		@include breakpoint($bp-palm-max, max) {
+			flex-grow: 1;
+
+			&:nth-child(n+2) { border-top-width: 0; }
+		}
+
+		// Maintain single column.
+		@include breakpoint($bp-palm, min) {
+			width: 100%;
+		}
+
+		// While in three columns, the 3rd column has no left border. Starting
+		// with the fourth there's no top border. Resets previous styles.
+		@include breakpoint($bp-hands, min) {
+			width: 33%;
+		}
+
+		@media screen and (min-width: $bp-hands) {
+			&:nth-child(4n-3),
+			&:nth-child(3n) { border-left-width: 0; }
+
+			&:nth-child(n+4) { border-top-width: 0; }
+
+			&:nth-child(3n) { border-top-width: 1px; }
+
+			&:nth-child(3n-2) { border-left-width: 1px; }
+		}
+
+		@include breakpoint($bp-hands, min) {
+			min-height: 12.5rem;
+		}
+	}
+
+	.listing--grid &.listing__item--pairs {
+		// While in a single column, all but the first have no top border.
+		@include breakpoint($bp-palm-max, max) {
+			flex-grow: 1;
+
+			&:nth-child(n+2) { border-top-width: 0; }
+			&:nth-child(2n) { border-left-width: 1px; }
+		}
+
+		// Maintain single column.
+		@include breakpoint($bp-palm, min) {
+			width: 100%;
+		}
+
+		// While in two columns, the 2nd column has no left border. Starting
+		// with the third there's no top border. Resets previous styles.
+		@include breakpoint($bp-hands, min) {
+			width: 50%;
+
+			&:nth-child(3n-3),
+			&:nth-child(3n) { border-left-width: 0; }
+
+			&:nth-child(2n) { border-top-width: 0; }
+
+			&:nth-child(n+2) { border-top-width: 0; }
+
+			&:nth-child(2) { border-top-width: 1px; }
+			&:nth-child(2n-1) { border-left-width: 1px; }
+		}
+	}
+
+	.listing--grid &.listing__item--two-three {
+		// While in a single column, all but the first have no top border.
+		@include breakpoint($bp-palm-max, max) {
+			flex-grow: 1;
+
+			&:nth-child(n+2) { border-top-width: 0; }
+		}
+
+		// Maintain single column.
+		@include breakpoint($bp-palm, min) {
+			width: 100%;
+		}
+
+		// While in two columns, the 2nd column has no left border. Starting
+		// with the third there's no top border. Resets previous styles.
+		@include breakpoint($bp-hands, min) {
+			width: 50%;
+
+			&:nth-child(3n-3),
+			&:nth-child(3n) { border-left-width: 0; }
+
+			&:nth-child(2n) { border-top-width: 0; }
+
+			&:nth-child(n+2) { border-top-width: 0; }
+
+			&:nth-child(2) { border-top-width: 1px; }
+			&:nth-child(2n-1) { border-left-width: 1px; }
+
+			&:only-child { @include margin(null auto); }
+		}
+
+		// While in three columns, the 3rd column has no left border. Starting
+		// with the fourth there's no top border. Resets previous styles.
+		@include breakpoint($bp-desk, min) {
+			width: 33%;
+			min-height: 12.5rem;
+
+			&:nth-child(4n-3),
+			&:nth-child(3n) { border-left-width: 0; }
+
+			&:nth-child(n+4) { border-top-width: 0; }
+			// &:nth-child(3n) { border-top-width: 0; }
+
+			&:nth-child(3) { border-top-width: 1px; }
+			&:nth-child(3n-2) { border-left-width: 1px; }
+		}
+	}
+
+	//
+	// Listing Block variations
+	//
+	.listing--blocks--tight &,
+	.listing--blocks--press &,
+	.listing--blocks--sm & {
+		@include span-columns(12 of 12);
+		@include omega(2n);
+		display: flex;
+		float: none;
+	}
+
+	.listing--blocks--tight &,
+	.listing--blocks--sm & {
+		@include breakpoint($bp-hands-max, max) {
+			&:nth-of-type(n+3) {
+				// Add top margin for the 3rd and later item when 50% width.
+				margin-top: $gutter;
+			}
+		}
+	}
+
+	.listing--blocks--default &,
+	.listing--blocks--tight &,
+	.listing--blocks--press &,
+	.listing--blocks--sm & {
+		@include breakpoint($bp-hands) {
+			@include span-columns(6 of 12);
+			@include omega(2n);
+			display: flex;
+			float: none;
+		}
+
+		@include breakpoint($bp-hands-wide) {
+			@include omega-reset(2n);
+			@include span-columns(4 of 12);
+			@include omega(3n);
+			display: flex; // Repeated as `span-columns` sets to `display`
+			float: none;
+		}
+	}
+
+	.listing--blocks--default &,
+	.listing--blocks--tight &,
+	.listing--blocks--sm & {
+		@media screen and (min-width: $bp-hands) and (max-width: $bp-hands-max) {
+			&:nth-of-type(n+3) {
+				// Add top margin for the 3rd and later item when 50% width.
+				margin-top: $gutter;
+			}
+		}
+
+		@include breakpoint($bp-hands-wide) {
+			&:nth-of-type(n+4) {
+				// Add top margin for the 4rd and later card when 1/3 width.
+				margin-top: $gutter;
+			}
+		}
+	}
+
+	.listing--blocks--press & {
+		@include breakpoint($bp-palm-max, max) {
+			&:nth-of-type(n+3) {
+				// Add top margin for the 3rd and later item when 50% width.
+				margin-top: 2.5rem;
+			}
+		}
+
+		@media screen and (min-width: $bp-hands) and (max-width: $bp-hands-max) {
+			&:nth-of-type(n+3) {
+				// Add top margin for the 3rd and later item when 50% width.
+				margin-top: 5rem;
+			}
+		}
+
+		@include breakpoint($bp-hands-wide) {
+			&:nth-of-type(n+4) {
+				// Add top margin for the 4rd and later card when 1/3 width.
+				margin-top: 5rem;
+			}
+		}
+	}
+
+	.listing--blocks--default & {
+		@include breakpoint($bp-desk) {
+			@include span-columns(3.5 of 12);
+			@include shift-in-context(.75 of 12);
+			@include omega(3n);
+			display: flex;
+			float: none;
+
+			&:first-child { margin-left: 0; }
+			&:only-child { @include margin(null auto); }
+		}
+	}
+
+	.listing--blocks--tight &,
+	.listing--blocks--press & {
+		@include breakpoint($bp-desk) {
+			@include span-columns(4 of 12);
+			@include shift-in-context(0 of 12);
+			@include omega(3n);
+			display: flex;
+			float: none;
+		}
+	}
+
+	.listing--blocks--sm & {
+		@include breakpoint($bp-desk) {
+			@include omega-reset(3n);
+			@include span-columns(3 of 12);
+			@include shift-in-context(0 of 12);
+			@include omega(4n);
+			display: flex;
+			float: none;
+
+			&:nth-of-type(n+4) {
+				// Add top margin for the 4rd and later card when 1/3 width.
+				margin-top: 0;
+			}
+
+			&:nth-of-type(n+5) {
+				// Add top margin for the 4rd and later card when 1/3 width.
+				margin-top: $gutter;
+			}
+		}
+	}
+
+	.listing--blocks--text & {
+		@include breakpoint($bp-palm) {
+			@include span-columns(8 of 12);
+			@include shift(2 of 12);
+			display: flex;
+			float: none;
+		}
+
+		@include breakpoint($bp-hands) {
+			@include omega-reset(2n);
+			@include span-columns(4 of 12);
+			@include shift(0);
+			@include omega(3n);
+			display: flex;
+			float: none;
+
+			&:only-child { @include margin(null auto); }
+		}
+	}
+
+	// Double class as specificity hack.
+	.listing--blocks &.listing__item--fill.listing__item--fill {
+		width: 100%;
+		margin: 0;
+
+		@include breakpoint($bp-hands) {
+			width: 50%;
+
+			// Designed for a single row of three. At this breakpoint the third
+			// fills its row.
+			&:nth-of-type(3) {
+				@include breakpoint($bp-hands-max, max) {
+					width: 100%;
+				}
+			}
+		}
+
+		@include breakpoint($bp-hands-wide) {
+			width: percentage(1/3);
+		}
+	}
+}
+
+.listing__link,
+.listing__content,
+.listing__card {
+	.listing--grid & {
+		@include listing-block-contents;
+		display: inline-flex;
+	}
+}
+
+.listing__link,
+.listing__content {
+	.listing--grid & {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.listing__link {
+	.listing--grid & {
+		@include icon(plus, after);
+		transition:
+			color  $transition-timing,
+			background-color $transition-timing;
+		font-weight: bold;
+
+		&::after {
+			display: block;
+			max-height: 0;
+			padding-top: 0;
+			transition: all $transition-timing;
+			color: $bg-offset;
+			font-size: 2rem;
+			line-height: 1;
+			overflow: hidden;
+		}
+
+		&:hover,
+		&:focus {
+			// justify-content: space-around;
+			background-color: $link-color;
+			color: $bg-offset;
+			text-decoration: none;
+
+			&::after {
+				max-height: none;
+				padding-top: 1rem;
+				// transition: all $transition-timing;
+				// overflow: hidden;
+			}
+		}
+	}
+}
+
+.listing__content {
+	.listing--grid & {
+		@include padding(2.5rem null);
+	}
+}
+
+.listing__card {
+	.listing--grid & {
+		padding: 0;
+	}
+}
+
+.listing__item__icon {
+	.listing__content & {
+		max-width: 5rem;
+		margin-bottom: 1.25rem;
+
+		@include breakpoint($bp-hands) {
+			margin-bottom: 1.875rem;
+		}
+	}
+
+	.listing__content--location & {
+		max-width: 1.875rem;
+		margin-bottom: 1.25rem;
+
+		@include breakpoint($bp-hands) {
+			margin-bottom: 1.875rem;
+		}
+	}
+}

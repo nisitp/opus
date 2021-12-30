@@ -1,0 +1,245 @@
+{
+    "key": "group_588a582cd5a98",
+    "title": "Post type - Career",
+    "fields": [
+        {
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": "",
+            "rows": 3,
+            "key": "field_588a5c14f8aa2",
+            "label": "Short description",
+            "name": "job_teaser",
+            "type": "textarea",
+            "instructions": "Enter a brief description to appear in the full listing of careers.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "layout": "horizontal",
+            "choices": {
+                "boston": "Boston, MA",
+                "branchburg": "Branchburg, NJ",
+                "chicago": "Chicago, IL",
+                "london": "London, UK",
+                "new_york": "New York, NY",
+                "pal_alto": "Palo Alto, CA",
+                "pittsburgh": "Pittsburgh, PA",
+                "various": "Various Cities"
+            },
+            "default_value": "",
+            "other_choice": 1,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "array",
+            "key": "field_588a5c63f8aa3",
+            "label": "Location",
+            "name": "job_location",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "layout": "horizontal",
+            "choices": {
+                "administration": "Administration",
+                "alliances": "Alliances",
+                "client_services": "Client Services",
+                "customer_success": "Customer Success",
+                "customer_support": "Customer Support",
+                "development": "Development",
+                "executive": "Executive",
+                "it": "Information Technology",
+                "marketing": "Marketing",
+                "network_services": "Network Services",
+                "product_mgmt": "Product Management",
+                "product_strat": "Product Strategy",
+                "qual_assurance": "Quality Assurance",
+                "research": "Research",
+                "sales": "Sales",
+                "tech_ops": "Tech Operations"
+            },
+            "default_value": "",
+            "other_choice": 1,
+            "save_other_choice": 0,
+            "allow_null": 0,
+            "return_format": "array",
+            "key": "field_588a5d95f8aa4",
+            "label": "Department",
+            "name": "job_department",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "default_value": "",
+            "delay": 0,
+            "key": "field_588a5df7f8aa5",
+            "label": "Overview",
+            "name": "job_overview",
+            "type": "wysiwyg",
+            "instructions": "Enter a general description of this job.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_588a5e50f8aa7",
+                    "label": "Responsibility",
+                    "name": "job_responsibility",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Responsibility",
+            "collapsed": "",
+            "key": "field_588a5e24f8aa6",
+            "label": "Responsibilities",
+            "name": "job_responsibilities",
+            "type": "repeater",
+            "instructions": "Add brief job responsibility descriptions. Each will be added to a list on the page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "sub_fields": [
+                {
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "key": "field_58ab094a79463",
+                    "label": "Qualification",
+                    "name": "job_qual",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Qualification",
+            "collapsed": "field_58ab094a79463",
+            "key": "field_58ab094a79462",
+            "label": "Qualifications",
+            "name": "job_quals",
+            "type": "repeater",
+            "instructions": "Add brief job qualification descriptions. Each will be added to a list on the page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "default_value": "",
+            "delay": 0,
+            "key": "field_588a5e69f8aa8",
+            "label": "Desired Skills",
+            "name": "job_skills",
+            "type": "wysiwyg",
+            "instructions": "Described desired skills for this position",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "placeholder": "",
+            "key": "field_588a5e8df8aa9",
+            "label": "Link to application",
+            "name": "job_link",
+            "type": "url",
+            "instructions": "Entere the web addresss for the job application.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "careers"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1487604939
+}

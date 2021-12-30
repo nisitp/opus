@@ -1,0 +1,205 @@
+//
+// Footer
+//
+.footer {
+	@include padding(2.5rem null 6.25rem);
+	margin-top: 2.5rem;
+	background-color: $brand-primary;
+
+	@include breakpoint($bp-hands) {
+		margin-top: 3.75rem;
+		padding-top: 3.75rem;
+	}
+
+	@include breakpoint($bp-desk) {
+		margin-top: 6.25rem;
+	}
+
+	.footer-nav {
+		display: block;
+		float: left;
+
+		@include breakpoint($bp-palm-max, max) {
+			width: 100%;
+		}
+
+		ul {
+			padding-left: 0;
+			list-style: none;
+
+			li {
+				@include transition;
+				display: inline-block;
+				margin-right: 3.5rem;
+
+				@include breakpoint($bp-palm-max, max) {
+					display: block;
+					width: 100%;
+					float: left;
+					line-height: 3rem;
+				}
+
+				a {
+					display: inline-flex;
+					align-items: center;
+					color: $white;
+					letter-spacing: .075em;
+
+					&:hover,
+					&:focus {
+						border-bottom-width: 0;
+
+						i { text-decoration: none; }
+					}
+
+					&:active { background: rgba(white, .2); }
+
+					i {
+						margin-right: 1.25rem;
+						float: left;
+						font-size: 1.875rem;
+					}
+				}
+			}
+		}
+	}
+
+	.footer-social {
+		float: right;
+
+		@include breakpoint($bp-hands-wide-max, max) {
+			float: none;
+
+			&::before {
+				display: block;
+				clear: both;
+				content: "";
+			}
+		}
+
+		ul {
+			@include breakpoint($bp-hands-wide-max, max) {
+				margin-top: 2.75rem;
+			}
+
+			li {
+				display: inline-block;
+				margin-left: .375rem;
+
+				@include breakpoint($bp-hands-wide-max, max) {
+					&:first-child {
+						margin-left: 0;
+					}
+				}
+
+				a {
+					@include transition;
+					color: rgba($text-on-dark, .5);
+					font-size: 2.25rem;
+					text-decoration: none;
+
+					&:hover,
+					&:focus { color: rgba($text-on-dark, .75); }
+
+					&:active { background: none !important; }
+				}
+			}
+		}
+	}
+
+	.footer-legal {
+		width: 100%;
+		margin-top: 3.75rem;
+		padding-top: 1.25rem;
+		border-top: 1px solid #2c4c6b;
+		font-size: $font-size-small;
+
+		@include breakpoint($bp-palm-max, max) {
+			margin-top: 2.5rem;
+		}
+
+		.footer-logo {
+			display: block;
+			float: left;
+
+			@include breakpoint($bp-hands-wide-max, max) {
+				float: none;
+			}
+
+			a {
+				display: inline-block;
+				width: 8.25rem;
+				height: 3.75rem;
+				background: url("../img/logo-opus-reversed.svg") no-repeat;
+
+				&:hover,
+				&:focus { border-bottom-width: 0; }
+			}
+		}
+
+		.footer-copyright {
+			float: right;
+			color: $text-on-dark;
+			line-height: 3.75rem;
+
+			@include breakpoint($bp-hands-wide-max, max) {
+				float: none;
+				line-height: 1.5em;
+			}
+		}
+
+		.footer-nav-legal {
+			float: right;
+
+			@include breakpoint($bp-hands-wide-max, max) {
+				float: none;
+			}
+
+			ul {
+				padding: 0;
+
+				li {
+					display: inline-block;
+					position: relative;
+					margin-left: 1.5625rem;
+					padding-left: 1.5625rem;
+					font-size: .875rem;
+					line-height: 3.75rem;
+
+					@include breakpoint($bp-hands-wide-max, max) {
+						line-height: 1.5em;
+
+						&:first-child {
+							margin-left: 0;
+							padding-left: 0;
+						}
+					}
+
+					a {
+						color: $text-on-dark;
+
+						&:active { background: rgba($text-on-dark, .2); }
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-social-link {
+	width: 37px;
+	height: 37px;
+	border-radius: 50%;
+	display: block;
+	background: #56728f;
+	color: #1c2e3f !important;
+	font-size: 22px !important;
+	text-align: center !important;
+	&:hover {
+		background: #7395b6;
+	}
+	i {
+		text-align: center;
+		margin-top: 7.5px;
+	}
+}

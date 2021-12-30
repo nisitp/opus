@@ -1,0 +1,12 @@
+body.leadership{
+	.panel--listing{
+		.listing--blocks{
+			.listing__item{
+				.text-unheading{
+					// Workaround IE11's broken flexbox
+					max-width: 311px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+.entity-lookup {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.entity-lookup input {
+    background-color: white;
+    border: 1px solid #cccccc;
+    font-size: 16px;
+    font-weight: bold;
+    color: #686868;
+}
+
+#entity-results {
+    position: absolute;
+    z-index: 9050;
+}
+
+#entity-results div#ysearchresult{
+    padding-bottom:4px;
+}
+
+#entity-results .yui-ac-hd{
+    border-bottom: 1px dotted #336699;
+    cursor: default;
+    font-size: 11px;
+    margin-bottom: 2px;
+    padding: 0 5px 5px;
+    white-space: nowrap;
+}
+
+#entity-results .yui-ac-bd{
+    margin: 0;
+    padding: 0;
+}
+
+#entity-results .yui-ac-content{
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #4d4d4d;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    width: 900px;
+    z-index: 9050;
+    margin:5px;
+}
+
+#entity-results .yui-ac-shadow{
+    background: none repeat scroll 0 0 #A0A0A0;
+    left: 0;
+    margin: 0.3em;
+    position: absolute;
+    top: 0;
+    z-index: 9049;
+}
+
+#entity-results ul{
+    margin: 0;
+    padding: 1px 0;
+    width: auto;
+}
+
+#entity-results li{
+    cursor: default;
+    font-size: 11px;
+    padding: 0 5px;
+    white-space: nowrap;
+}
+
+#entity-results li.yui-ac-highlight{
+    background: none repeat scroll 0 0 #e1e1e1;
+}
+
+
+

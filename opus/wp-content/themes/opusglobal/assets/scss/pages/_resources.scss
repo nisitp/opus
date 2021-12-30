@@ -1,0 +1,530 @@
+.main-area {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.resource-area {
+    padding: 40px 0;
+    @include breakpoint($bp-charlie) {
+        padding: 100px 0;
+    }
+}
+
+.card--resource {
+    .card__is-featured {
+        display: block;
+    }
+    .card__title {
+        font-weight: 700;
+    }
+}
+
+.resource-excerpt {
+    p {
+        margin: 10px 0 0 0;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.page-template-page-resources-php {
+    footer {
+        margin-top: 0px;
+    }
+
+    .card__feature {
+        .card--resource {
+            .card__top--bordered {
+                border: none;
+            }
+        }
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 25px;
+    max-width: 100%;
+    @include breakpoint($bp-charlie) {
+        padding: 0 40px;
+        width: 1250px;
+    }
+}
+
+.resource-left-column {
+    float: left;
+    width: 100%;
+    background: url(../img/bg-pattern.png) repeat;
+    padding: 25px;
+    @include breakpoint($bp-charlie) {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        width: 25%;
+        padding: 0px;
+    }
+    @include breakpoint($bp-delta) {
+        width: 30%;
+    }
+}
+
+.resource-right {
+    float: right;
+    width: 100%;
+    padding-top: 40px;
+    @include breakpoint($bp-charlie) {
+        width: 75%;
+        padding-top: 100px;
+        padding-left: 30px;
+    }
+    @include breakpoint($bp-delta) {
+        padding-left: 60px;
+    }
+    h1 {
+        @include breakpoint($bp-delta) {
+            font-size: 3.75rem;
+        }
+    }
+}
+
+.text-subtle {
+    ul {
+        margin: 10px 0 0 0;
+        float: left;
+        width: 100%;
+        padding: 0px;
+        li {
+            list-style-type: none;
+            float: left;
+            font-size: 14px;
+            color: #999999;
+            text-transform: uppercase;
+            &:last-child {
+                list-style-type: disc;
+                margin: 0 0 0 25px;
+            }
+        }
+    }
+}
+
+.resource-left {
+    float: left;
+    width: 100%;
+    @include breakpoint($bp-charlie) {
+        padding: 100px 0 0 0;
+    }
+    ul {
+        float: left;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        li {
+            list-style-type: none;
+            float: left;
+            width: 100%;
+            text-transform: uppercase;
+            margin: 0 0 5px;
+            @include breakpoint($bp-charlie) {
+                text-align: right;
+                &.current {
+                    a {
+                        color: #ff6800;
+                        border-right: 2px solid #ff6800;
+                    }
+                }
+            }
+            a {
+                padding: 8px 0;
+                display: block;
+                font-weight: 700;
+                color: #7c858c;
+                &:hover {
+                    border-bottom: 0px;
+                }
+                @include breakpoint($bp-charlie) {
+                    padding-right: 30px;
+                    border-right: 2px solid rgba(255,255,255,0);
+                    &:hover {
+                        border-bottom: 0px;
+                        border-right: 2px solid #ff6800;
+                    }
+                }
+            }
+            &.current {
+                a {
+                    color: #ff6800;
+                }
+            }
+        }
+    }
+}
+
+.featured-resource {
+    float: left;
+    width: 100%;
+    margin: 20px 0 0 0;
+    @include breakpoint($bp-charlie) {
+        margin: 50px 0 0 0;
+    }
+}
+
+.featured-resource-left {
+    float: left;
+    width: 100%;
+    margin: 0 0 10px;
+    position: relative;
+    @include breakpoint($bp-charlie) {
+        width: 270px;
+        margin: 0px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .overlay {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background: #1c2e3f;
+        opacity: .5;
+    }
+    a {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+    }
+}
+
+.featured-resource-right {
+    float: left;
+    width: 100%;
+    border-bottom: 4px solid #dddddd;
+    padding-bottom: 30px;
+    @include breakpoint($bp-charlie) {
+        width: calc(100% - 300px);
+        padding: 0 0 50px 0;
+        float: right;
+    }
+    .resource-title { 
+        font-size: 22px;
+        line-height: 110%;
+        @include breakpoint($bp-charlie) {
+            font-size: 30px;
+        }
+    }
+    ul {
+        margin: 10px 0 0 0;
+        float: left;
+        width: 100%;
+        padding: 0px;
+        li {
+            list-style-type: none;
+            float: left;
+            font-size: 14px;
+            color: #999999;
+            text-transform: uppercase;
+            &:last-child {
+                list-style-type: disc;
+                margin: 0 0 0 25px;
+            }
+        }
+    }
+}
+
+.resource-tag {
+    float: left;
+    width: 100%;
+    margin: 0 0 20px;
+    a {
+        background: #4fc6af;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+        padding: 3px 15px;
+        border-radius: 20px;
+    }
+}
+
+.resource-title {
+    font-size: 18px;
+    font-weight: 700;
+    a {
+        color: #1c2e3f;
+    }
+}
+
+.all-resources {
+    float: left;
+    width: 100%;
+    margin: 80px 0 0 0;
+    @include breakpoint($bp-charlie) {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+.indiv-resource {
+    float: left;
+    width: 100%;
+    margin: 0 0 30px;
+    @include breakpoint($bp-charlie) {
+        width: 50%;
+        padding: 0 15px;
+        margin: 0 0 40px;
+    }
+    @include breakpoint($bp-delta) {
+        width: 33.33%;
+        margin: 0 0 80px;
+    }
+    p {
+        margin: 0px;
+        padding: 0px;
+    }
+    ul {
+        margin: 10px 0 0 0;
+        float: left;
+        width: 100%;
+        padding: 0px;
+        li {
+            list-style-type: none;
+            float: left;
+            font-size: 14px;
+            color: #999999;
+            text-transform: uppercase;
+            &:last-child {
+                list-style-type: disc;
+                margin: 0 0 0 25px;
+            }
+        }
+    }
+}
+
+.indiv-resource-inner {
+    border-bottom: 4px solid #dddddd;
+    padding-bottom: 30px;
+    float: left;
+    width: 100%;
+}
+
+.resource-image {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin: 0 0 20px;
+    img {
+        float: left;
+        width: 100%;
+    }
+    .overlay {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background: #1c2e3f;
+        opacity: .5;
+    }
+    a {
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+    }
+}
+
+// Single Resource
+
+.single-resource-title {
+    float: left;
+    width: 100%;
+    border-bottom: 4px solid #dddddd;
+    text-align: center;
+    padding: 0 0 20px;
+}
+
+
+.single-resource-meta {
+    float: left;
+    width: 100%;
+    margin: 37px 0 40px 0;
+    @include breakpoint($bp-charlie) {
+        margin: 57px 0 60px 0;
+    }
+    h3 {
+        text-align: center;
+        font-weight: 500;
+    }
+    ul {
+        margin: 0 auto;
+        display: table;
+        padding: 0px;
+        li {
+            list-style-type: none;
+            float: left;
+            font-size: 14px;
+            color: #999999;
+            text-transform: uppercase;
+            &:last-child {
+                list-style-type: disc;
+                margin: 0 0 0 25px;
+            }
+        }
+    }
+}
+
+.single-resource-left {
+    float: left;
+    width: 100%;
+    @include breakpoint($bp-charlie) {
+        width: 65%;
+    }
+}
+
+.resource-header {
+    float: left;
+    width: 100%;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    margin: 0 0 30px;
+    position: relative;
+
+    .resource-header-icon{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 80px;
+        width: 80px;
+        background: $brand-secondary;
+        z-index: 1;
+        transform: translate( -50%, -50% );
+        border-radius: 50%;
+
+        i{
+            position: absolute;
+            color: #FFF;
+            font-size: 50px;
+            line-height: 80px;
+            margin-top: 0.05em;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50% );
+        }
+    }
+}
+
+.resource-header-inner {
+    float: left;
+    width: 100%;
+    background: #1c2e3f;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    @include breakpoint($bp-charlie) {
+        height: 275px;
+    }
+
+    .resource-logo-icon{
+        position: absolute;
+        bottom: -20px;
+        left: -25px;
+        width: 100px;
+        height: auto;
+        opacity: 0.3;
+
+        @include breakpoint($bp-charlie) {
+            bottom: -57px;
+            left: -65px;
+            width: 220px;
+        }
+    }
+}
+
+
+.single-resource-right {
+    float: left;
+    width: 100%;
+    @include breakpoint($bp-charlie) {
+        width: 270px;
+        float: right;
+    }
+}
+
+.resource-block {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    margin: 0 0 20px;
+    @include breakpoint($bp-charlie) {
+        margin: 0 0 40px;
+    }
+    span {
+        float: left;
+        width: 100%;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    &:last-child {
+        border-bottom: 0px;
+        margin: 0px;
+    }
+    ul {
+        margin-top: 5px;
+        float: left;
+        width: 100%;
+        li {
+            float: left;
+            width: 100%;
+            margin: 0 0 10px;
+        }
+    }
+}
+
+.header-inner-text {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    @include breakpoint($bp-charlie) {
+        font-size: 36px;
+    }
+    span {
+        font-size: 16px;
+        text-transform: uppercase;
+        display: block;
+        float: left;
+        width: 100%;
+        margin: 0 0 -5px;
+    }
+}
+
+.button--hide {
+    padding: 0;
+    border-width: 0;
+    border-radius: 0;
+    background: none;
+
+    &:hover {
+        background-color: inherit;
+        text-decoration: none;
+    }
+
+    &:active {
+        background-color: inherit;
+        box-shadow: none;
+    }
+}

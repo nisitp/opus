@@ -1,0 +1,234 @@
+$panel-vert-padding: 4.5rem;
+
+.panel {
+	@extend %panel-margin;
+	@include row();
+
+	&.bg-white,
+	&.bg-gray,
+	&.bg-primary,
+	&.bg-pattern,
+	&.panel--banner--gradient {
+		@extend %panel-padding;
+	}
+
+	&.panel--accordion-header {
+		padding-top: 2.5rem;
+
+		@include breakpoint($bp-desk) {
+			padding-top: 3.75rem;
+		}
+	}
+
+	article > &:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.panel--center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	/* IE10+ specific styles go here */
+	@include ie-only{
+		> * {
+			max-width: 100%;
+		}
+	}
+
+	.panel__btn {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+.panel--equal-cols {
+	position: relative;
+
+	&.panel {
+		@include margin(0 null);
+		@include padding(0 null);
+	}
+}
+
+.panel--banner--img {
+	position: relative;
+	background-color: $brand-primary;
+	background-color: rgba($brand-primary, .7);
+	color: $white;
+	text-align: center;
+
+	&.panel { padding: 0; }
+}
+
+.panel--banner--gradient {
+	background:
+		linear-gradient(
+			to bottom,
+			$brand-secondary-light,
+			$brand-secondary
+		);
+	color: $white;
+	text-align: center;
+}
+
+.panel--timeline { position: relative; }
+
+.panel__bg { display: block; }
+
+.panel__body {
+	.panel--sidebar & {
+		@include breakpoint($bp-hands, min) {
+			font-size: 1.125rem;
+		}
+
+		@include breakpoint($bp-desk, min) {
+			font-size: 1.3125rem;
+		}
+	}
+
+	.panel--banner--img & {
+		@include padding(2.5rem null);
+
+		@include breakpoint ($bp-hands) {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			left: 0;
+			width: 100%;
+			transform: translateY(-50%);
+		}
+	}
+
+	.panel--equal-cols & {
+		@include padding(null ($gutter / 2));
+		width: 100%;
+		max-width: $content-bounds / 2;
+
+		@include breakpoint($bp-hands-wide, min) {
+			@include padding(null ($gutter * 2));
+		}
+	}
+
+	.panel__col--bargraph & {
+		position: relative;
+		max-width: 100%;
+	}
+
+	@include breakpoint($bp-hands-wide) {
+		.panel--equal-cols .l-cols & {
+			width: 100%;
+			max-width: 36.5625rem;
+		}
+
+		.panel--equal-cols .l-col:nth-child(2n-1) & {
+			float: right;
+		}
+
+		.panel--equal-cols .l-col:nth-child(2n) & {
+			float: left;
+		}
+	}
+
+	@include breakpoint($bp-desk) {
+		.panel--equal-cols .panel__col--text & {
+			padding-right: percentage(1/6);
+		}
+	}
+
+	p:last-child { margin-bottom: 0; }
+}
+
+.panel__body--quote {
+	@include breakpoint($bp-desk) {
+		max-width: flex-grid(10, 12);
+	}
+}
+
+.panel__wrapper { position: relative; }
+
+.panel__heading {
+	margin-bottom: 2.75rem;
+	text-align: center;
+
+	.panel--sidebar &,
+	.panel--full-width & {
+		text-align: initial;
+	}
+
+	.panel--banner--img &,
+	.panel--banner--gradient & {
+		color: inherit;
+	}
+
+	.panel--banner--img & {
+		margin-bottom: .5em;
+
+		@include breakpoint ($bp-palm-max, max) {
+			font-size: 2.25rem;
+		}
+	}
+
+	.panel--timeline & {
+		display: none;
+		text-align: left;
+
+		@include breakpoint($bp-hands) {
+			display: block;
+			position: sticky;
+			top: 100px;
+		}
+
+		@include breakpoint($bp-hands) {
+			@include span-columns(5 of 12);
+		}
+	}
+}
+
+.panel__subheading {
+	margin-bottom: 2rem;
+	font-weight: 100;
+	text-align: center;
+}
+
+.panel__description { margin-bottom: 4em; }
+
+.panel__img {
+	max-width: 100%;
+	height: auto;
+
+	&--centered { @include margin(null auto); }
+
+	.panel--center > & { margin: 0 auto 3rem; }
+
+	.panel--equal-cols &--oversized {
+		position: relative;
+		right: -($gutter / 2);
+
+		@include breakpoint($bp-hands-wide, min) {
+			position: absolute;
+			right: 0;
+			width: auto;
+			max-width: flex-grid(6, 12);
+			max-height: 80%;
+			margin-right: flex-gutter(12);
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.panel__bg--bottom {
+	@include position(absolute, null 0 (-$vert-gutter-section));
+	z-index: -1;
+}
+
+.panel__anchor {
+	@include size(0);
+	position: relative;
+	top: -6.25rem;
+}

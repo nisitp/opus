@@ -1,0 +1,146 @@
+{
+    "key": "group_58939f131c46e",
+    "title": "Post type - News items",
+    "fields": [
+        {
+            "display_format": "F j, Y",
+            "return_format": "M j, Y",
+            "first_day": 1,
+            "key": "field_58939f1322daf",
+            "label": "News date",
+            "name": "og_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "For Immediate Release",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_5893a084666c2",
+            "label": "Subtitle",
+            "name": "news_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0,
+            "key": "field_5893b87689c92",
+            "label": "News item content",
+            "name": "news_text",
+            "type": "wysiwyg",
+            "instructions": "Enter the contents of the press release or news item.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0,
+            "key": "field_5893a0ba666c3",
+            "label": "Press contacts",
+            "name": "news_contact",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "default_value": "Opus is a compliance platform provider headquartered in Palo Alto, California, created through a $500 million partnership between GTCR, one of the world\u2019s leading private equity firms, and Doug Bergeron, former CEO of VeriFone. Through direct investments and targeted acquisitions, Opus\u2019s mission is to build the world\u2019s leading compliance platform by integrating leading technology solutions addressing the increasingly complex compliance requirements and risks faced by companies across all industries. Currently, these include our Alacra KYC\/AML and Reference Data business information solutions for large financial services customers, and our Hiperos 3PM solutions for large corporate clients across several large end market verticals including energy, financial services, manufacturing, real estate, life sciences, and technology. For more information about Opus, please visit <a href=\"www.opusglobal.com\">www.opusglobal.com<\/a>. For more information on our KYC\/AML and Reference Data solutions, please visit <a href=\"www.alacra.com\">www.alacra.com<\/a>, and for more information on our 3PM solutions, please visit <a href=\"www.hiperos.com\">www.hiperos.com<\/a>.",
+            "delay": 0,
+            "key": "field_5893a101666c4",
+            "label": "Boilerplate",
+            "name": "news_boilerplate",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5893a291666c6",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": 0,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_5893a291666c6",
+            "label": "Hide boilerplate text",
+            "name": "hide_boilerplate",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "og_news"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1486414227
+}

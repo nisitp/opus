@@ -1,0 +1,23 @@
+.is-hidden { display: none; }
+
+.will-fix-top {
+	position: static;
+	top: -100%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+	transition: $transition;
+	z-index: 1;
+
+	&.is-fixed {
+		position: fixed;
+		top: 0;
+	}
+}
+
+.is-visible-on-fixed {
+	transition: $transition;
+	opacity: 0;
+
+	.is-fixed & { opacity: 1; }
+}

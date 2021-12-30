@@ -1,0 +1,59 @@
+// Adapted from Bourbon Refills library: http://refills.bourbon.io/components/
+// Designed for use within a `.nav` component.
+$base-font-size: 1em !default;
+$base-spacing: 1.5em !default;
+$action-color: #477DCA !default;
+$dark-gray: #333 !default;
+$gray-light: #DDD !default;
+$expander-arrow-width: 0.7em;
+$expander-toggle-size: 1rem;
+$expander-toggle-arrow-size: $expander-toggle-size;
+$expander-toggle-margin: 1em;
+
+.expander-trigger {
+	@include clearfix;
+	@include icon(chevron-down, after);
+	@include l-content;
+
+	display: none;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	color: $white;
+	font-size: $expander-toggle-size;
+	text-decoration: none;
+	cursor: pointer;
+	user-select: none;
+
+	@include breakpoint ($bp-desk-md, max) {
+		display: flex;
+	}
+
+	&::after {
+		@include transition;
+		transform: rotate(180deg);
+	}
+
+	&.expander-hidden::after { transform: rotate(0deg); }
+}
+
+@include breakpoint ($bp-desk-md, max) {
+	.expander--tablet {
+		.expander-hidden {
+			&::after {
+				font-size: $expander-toggle-size;
+			}
+		}
+
+		.expander-hidden + .expander-content {
+			display: none;
+		}
+	}
+
+	.expander-content { @include padding($gutter null)}
+}
+
+.expander__label {
+	@include nav-link;
+	display: block;
+}

@@ -1,0 +1,104 @@
+/***** PARTIALS *******/
+
+%resetPadding {
+  padding: 0;
+  margin: 0;
+}
+
+/***** FUNCTIONS *******/
+@function is-map($var){
+  @return type-of($var) == 'map';
+}
+
+@function get-grid($gridname) {
+	@if map_has_key($breakpoints, $gridname) {
+		$map: map_get($breakpoints, $gridname);
+		@return map_get($map, grid);
+	}	
+}
+/***** /FUNCTIONS *******/
+
+
+/***** MIXINS *******/
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin mqList($list) {
+  @each $listItem in $list {
+    @include mq($listItem) { @content };
+  }
+}
+
+@mixin mq($name, $type: min, $gridcontext: null) {
+  @if map_has_key($breakpoints, $name) {
+    $bp: map_get($breakpoints, $name); 
+    
+    $width: map_get($bp, "width");
+
+    @if $type == max {
+      $width: $width - 1px;
+    }
+
+    $grid: new map;
+    @if $gridcontext != null { 
+     $context: map_get($breakpoints, $gridcontext);
+     $grid: map_get($context, grid); 
+    } @else {
+     $grid: map_get($bp, grid);
+    }             
+    @media only screen and (#{$type}-width: $width) {
+      @include grid-media($grid) { // set the grid context to keep things DRY
+        @content;
+      }
+    }
+  }
+}
+
+@mixin grid-debug($grid, $color: red) {
+  // helper for the grid debugging. I broke it.
+  @if $debug == 1 {
+    @include grid-visual(tint($color, 95%), get-grid($grid));
+  }
+}
+
+@mixin simple-grid() {
+  @extend %resetPadding;
+  @include mq(tablet) {
+    @include grid-container(); // nested grid
+    @include grid-collapse();
+  }
+  > li {    
+    list-style: none;
+
+    > a {
+      display: block;
+      height: 100%;
+      cursor: pointer;
+    }
+    @include mq(tablet) {
+      @include grid-column(6);
+      
+      &:nth-child(odd) { clear: both; }
+
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+      
+  }
+}
+

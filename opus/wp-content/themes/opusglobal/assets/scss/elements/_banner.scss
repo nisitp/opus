@@ -1,0 +1,115 @@
+// Always include `.banner` in markup with any variations (e.g., .banner--blur)
+.banner {
+	position: relative;
+	height: 20rem;
+	background: $brand-primary;
+	background-size: cover;
+	background-position: center top;
+	color: $text-on-dark;
+	overflow: hidden;
+
+	&.banner--tall {
+		@include breakpoint ($bp-hands-wide, min) {
+			height: 25rem;
+		}
+	}
+
+	&.banner--landing {
+		height: auto;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: top center;
+	}
+
+	&.banner--contact {
+		.banner__bg {
+			height: 100%;
+		}
+	}
+
+	&.banner--feature {
+		height: 25rem;
+
+		@include breakpoint ($bp-hands-wide, min) {
+			height: 19rem;
+		}
+	}
+
+	&--plain {
+		@include padding((2 * $gutter) null $gutter);
+		height: auto;
+		margin-bottom: $gutter;
+		border-bottom: $border-thick;
+		background-color: transparent;
+		color: $brand-primary;
+
+		@include breakpoint($bp-desk) {
+			@include padding(6.25rem null 3.75rem);
+			margin-bottom: 3.75rem;
+		}
+	}
+}
+
+.banner__bg {
+	@include position(absolute, 0 -100%);
+	width: auto;
+	max-width: none;
+	min-height: 100%;
+	margin: 0 auto;
+
+	@include breakpoint ($bp-hands-wide, min) {
+		@include vertical-align(absolute);
+		top: 0;
+		height: auto;
+		transform: none;
+	}
+
+	.banner--blur & { filter: blur(10px); }
+
+	.banner--feature & {
+		@include breakpoint ($bp-hands-wide, min) {
+			max-width: none;
+			height: auto;
+			min-height: 100%;
+		}
+
+		// @include breakpoint ($bp-desk, min) {
+		// 	max-width: 100%;
+		// }
+	}
+
+	.banner--tall &,
+	.banner--super & {
+		max-width: none;
+		height: auto;
+		min-height: 100%;
+
+		// @include breakpoint ($bp-desk, min) {
+		// 	max-width: 100%;
+		// }
+	}
+}
+
+.banner__overlay {
+	position: relative;
+	z-index: 1;
+}
+
+.banner__jump {
+	@include icon(chevron-down);
+	@include transition;
+	position: absolute;
+	bottom: rem(70px);
+	left: 50%;
+	transform: translateX(-50%);
+	color: $white;
+	font-size: 1.625rem;
+
+	&:visited { color: $white; }
+
+	&:hover,
+	&:focus {
+		transform: translate(-50%, -1rem);
+		border-bottom: 0;
+	}
+}

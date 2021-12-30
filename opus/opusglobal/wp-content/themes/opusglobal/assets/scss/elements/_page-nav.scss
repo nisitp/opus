@@ -1,0 +1,158 @@
+$bp-nav-transition: $bp-desk;
+
+.page-nav__category {
+	@extend %l-content;
+	margin-bottom: 1.5rem;
+	color: inherit;
+	font-size: inherit;
+
+	.page-nav__item + & {
+		margin-top: $gutter;
+
+		@include breakpoint ($bp-hands-wide, min) {
+			margin-top: 6.25rem;
+		}
+	}
+}
+
+.page-nav__subnav {
+	@include l-content;
+	@include padding(0 null);
+	margin: 2rem auto 0;
+	list-style: none;
+
+	@include breakpoint($bp-hands, min) {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	@include breakpoint($bp-nav-transition, min) {
+		max-height: 0;
+		margin-top: 0;
+		transition: $transition;
+		opacity: 0;
+		overflow: hidden;
+
+		.page-nav__item:hover &,
+		.page-nav__item:focus & {
+			max-height: 20rem;
+			margin-top: 2rem;
+    		opacity: 1;
+		}
+	}
+}
+
+.page-nav__icon {
+	@include size($icon-bullet-height);
+	margin-bottom: 1rem;
+
+	@include breakpoint($bp-nav-transition, min) {
+		@include span-columns(1 of 12);
+		margin-bottom: 0;
+	}
+
+	@include ie-only{
+		.icon--bullet {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+}
+
+.page-nav__heading {
+	margin-bottom: .25em;
+	color: $white;
+	text-transform: uppercase;
+
+	a {
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			border-bottom: 0;
+			color: $link-color;
+		}
+	}
+
+	@include breakpoint($bp-nav-transition, min) {
+		@include span-columns(4 of 12);
+		margin-bottom: 0;
+	}
+}
+
+.page-nav__description,
+.page-nav__arrow {
+	@include breakpoint($bp-nav-transition, min) {
+		transition: $transition;
+		opacity: 0;
+
+
+		.page-nav__item:hover &,
+		.page-nav__item:focus & {
+			opacity: 1;
+		}
+	}
+}
+
+.page-nav__description {
+	margin-bottom: 0;
+
+	@include breakpoint($bp-nav-transition, min) {
+		@include span-columns(6 of 12);
+	}
+}
+
+.page-nav__arrow {
+	display: inline-flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	align-items: center;
+	height: $icon-bullet-height;
+	font-size: 2rem;
+
+	@include breakpoint($bp-nav-transition, min) {
+		display: block;
+		top: 50%; // Safari fix. Not centering just with align-items.
+		height: auto;
+		transform: translateY(-50%);  // Safari fix. See above.
+	}
+}
+
+.page-nav__item {
+	@include padding(1rem null);
+	border-top: $border-on-dark;
+	border-bottom: $border-on-dark;
+
+	& + & { border-top: 0; }
+
+	&:hover,
+	&:focus {
+		background-color: $brand-primary;
+	}
+}
+
+.page-nav__item__body {
+	@extend %l-content;
+	position: relative;
+
+	@include breakpoint($bp-nav-transition, min) {
+		@include row();
+		display: flex;
+		align-items: center;
+	}
+}
+
+.page-nav__sub-item {
+	margin-bottom: .5rem;
+
+	&:last-child { margin-bottom: 0; }
+
+	@include breakpoint($bp-hands, min) {
+		margin-right: .5rem;
+	}
+}
+
+.page-nav__link { display: block; }
+
+.page-nav__more { margin-top: $gutter-half; }

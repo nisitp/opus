@@ -1,0 +1,1274 @@
+{
+    "key": "group_59bfafb4d88f0",
+    "title": "Infographic Template",
+    "fields": [
+        {
+            "key": "field_59bfafe4f5748",
+            "label": "Main",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59c98476fd391",
+            "label": "Use Main Nav",
+            "name": "use_main_nav",
+            "type": "true_false",
+            "instructions": "Use the site's main nav instead of the infographic nav.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_59bfb052f5749",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "Displayed next to the Opus logo.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_59bfb099f574a",
+            "label": "Background Image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "Used for the entire page. Slides parallax over altering the look through color overlays.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_59bfb19af574b",
+            "label": "CTA Link",
+            "name": "cta_link",
+            "type": "text",
+            "instructions": "Can be external, but to make it scroll to the form at the bottom, make this \"#infographic-form\" and the smooth scroll is taken care of.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59bfb207f574c",
+            "label": "CTA Label",
+            "name": "cta_label",
+            "type": "text",
+            "instructions": "e.g. \"Download The Report\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59bfb235f574d",
+            "label": "Hero",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59bfb256f574e",
+            "label": "Number Text",
+            "name": "hero_number_text",
+            "type": "text",
+            "instructions": "e.g. \"6\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59bfb275f574f",
+            "label": "Number Subtext",
+            "name": "hero_number_subtext",
+            "type": "text",
+            "instructions": "e.g. \"Trends\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59bfb284f5750",
+            "label": "Title Text",
+            "name": "hero_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59bfb4eaf5751",
+            "label": "Flyout Toggle Text",
+            "name": "hero_flyout_toggle_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59bfb4f2f5752",
+            "label": "Flyout Text",
+            "name": "hero_flyout_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_59bfbcdb30a7e",
+            "label": "Sections",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59bfbd3430a7f",
+            "label": "Sections",
+            "name": "sections",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Section",
+            "sub_fields": [
+                {
+                    "key": "field_59bfc84130a80",
+                    "label": "Title",
+                    "name": "section_title",
+                    "type": "text",
+                    "instructions": "Displayed in the Section Intro and at the top of each Slide.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59c94eb138d4e",
+                    "label": "Skip Numbering",
+                    "name": "skip_numbering",
+                    "type": "true_false",
+                    "instructions": "Skips the numbering on this section. Still receives one in the backend for dot navigation purposes.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_59bfc86430a81",
+                    "label": "Style",
+                    "name": "section_style",
+                    "type": "radio",
+                    "instructions": "Determines the color overlay that scrolls over the background, backgrounds of slides, etc.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "blue": "Blue",
+                        "orange": "Orange",
+                        "white": "White"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "",
+                    "layout": "horizontal",
+                    "return_format": "value"
+                },
+                {
+                    "key": "field_59bfcb1030a82",
+                    "label": "Oval Position",
+                    "name": "section_oval_position",
+                    "type": "select",
+                    "instructions": "Determines the position of the oval on the Section Intro.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "none": "None (no oval)",
+                        "middle-right": "Middle Right",
+                        "middle-left": "Middle Left",
+                        "bottom-right": "Bottom Right",
+                        "bottom-left": "Bottom Left",
+                        "top-left": "Top Left"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_59bfcde81af35",
+                    "label": "Slides",
+                    "name": "section_slides",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "block",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_59bfcf071af36",
+                            "label": "Layout",
+                            "name": "slide_layout",
+                            "type": "select",
+                            "instructions": "Whether this slide has text & graphics or only centered text.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "text-left": "Text Left \/ Graphic Right",
+                                "text-right": "Graphic Left \/ Text Right",
+                                "centered": "Large Centered (no graphic)"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59c02cadf09a8",
+                            "label": "Transparent?",
+                            "name": "slide_transparent",
+                            "type": "true_false",
+                            "instructions": "Check if the slide should have a transparent background.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_59bfd2951af37",
+                            "label": "Top Text",
+                            "name": "slide_top_text",
+                            "type": "text",
+                            "instructions": "Text above the larger number text. e.g. \"At least\"",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59bfd7d4d14c3",
+                            "label": "Top Text Animation",
+                            "name": "slide_top_text_animation",
+                            "type": "select",
+                            "instructions": "Animation used when this scrolls into view.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "fadeInDown": "fadeInDown",
+                                "fadeInLeft": "fadeInLeft",
+                                "fadeInRight": "fadeInRight",
+                                "fadeInUp": "fadeInUp",
+                                "slideInDown": "slideInDown",
+                                "slideInLeft": "slideInLeft",
+                                "slideInRight": "slideInRight",
+                                "slideInUp": "slideInUp"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59bfd2d61af38",
+                            "label": "Large Text",
+                            "name": "slide_large_text",
+                            "type": "text",
+                            "instructions": "Large text meant for numbers or short words. e.g. \"56<sup%<\/sup>\"",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "34",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59c02ad6fa37f",
+                            "label": "Large Text (smaller)",
+                            "name": "slide_large_text_smaller",
+                            "type": "true_false",
+                            "instructions": "Makes the large text smaller than usual. Check if using words rather than numbers.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_59bfda5837314",
+                            "label": "Large Text Animation",
+                            "name": "slide_large_text_animation",
+                            "type": "select",
+                            "instructions": "Animation used when this scrolls into view.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "fadeInDown": "fadeInDown",
+                                "fadeInLeft": "fadeInLeft",
+                                "fadeInRight": "fadeInRight",
+                                "fadeInUp": "fadeInUp",
+                                "slideInDown": "slideInDown",
+                                "slideInLeft": "slideInLeft",
+                                "slideInRight": "slideInRight",
+                                "slideInUp": "slideInUp"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59c01fee5ebb3",
+                            "label": "Under Text",
+                            "name": "slide_under_text",
+                            "type": "text",
+                            "instructions": "Text below the larger number text. e.g. \"More\"",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59c0204b5ebb4",
+                            "label": "Under Text Animation",
+                            "name": "slide_under_text_animation",
+                            "type": "select",
+                            "instructions": "Animation used when this scrolls into view.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "fadeInDown": "fadeInDown",
+                                "fadeInLeft": "fadeInLeft",
+                                "fadeInRight": "fadeInRight",
+                                "fadeInUp": "fadeInUp",
+                                "slideInDown": "slideInDown",
+                                "slideInLeft": "slideInLeft",
+                                "slideInRight": "slideInRight",
+                                "slideInUp": "slideInUp"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59bfd3031af39",
+                            "label": "Small Text",
+                            "name": "slide_small_text",
+                            "type": "text",
+                            "instructions": "Text below the larger number and under text. e.g. \"of companies experienced a third party data breach in the last year\"",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59bfda7637315",
+                            "label": "Small Text Animation",
+                            "name": "slide_small_text_animation",
+                            "type": "select",
+                            "instructions": "Animation used when this scrolls into view.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "fadeInDown": "fadeInDown",
+                                "fadeInLeft": "fadeInLeft",
+                                "fadeInRight": "fadeInRight",
+                                "fadeInUp": "fadeInUp",
+                                "slideInDown": "slideInDown",
+                                "slideInLeft": "slideInLeft",
+                                "slideInRight": "slideInRight",
+                                "slideInUp": "slideInUp"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59bfd3801af3a",
+                            "label": "Graphic",
+                            "name": "slide_graphic",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_59bfdf77a4532",
+                            "label": "Graphic Animation",
+                            "name": "slide_graphic_animation",
+                            "type": "select",
+                            "instructions": "Animation used when this scrolls into view.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "fadeInDown": "fadeInDown",
+                                "fadeInLeft": "fadeInLeft",
+                                "fadeInRight": "fadeInRight",
+                                "fadeInUp": "fadeInUp",
+                                "slideInDown": "slideInDown",
+                                "slideInLeft": "slideInLeft",
+                                "slideInRight": "slideInRight",
+                                "slideInUp": "slideInUp"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59bfd4711af3b",
+                            "label": "Graphic Offset",
+                            "name": "slide_graphic_offset",
+                            "type": "number",
+                            "instructions": "A negative or positive vertical margin (px) for the graphic. Use this if you want to make the graphic \"hang\" off of the box behind it.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-left"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "text-right"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        },
+                        {
+                            "key": "field_59bfd64ad14bf",
+                            "label": "Upper Centered Text",
+                            "name": "slide_upper_centered_text",
+                            "type": "text",
+                            "instructions": "The line above the large centered text.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "centered"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59bfde73a452e",
+                            "label": "Upper Centered Text Animation",
+                            "name": "slide_upper_centered_text_animation",
+                            "type": "select",
+                            "instructions": "Animation used when this scrolls into view.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "centered"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "fadeInDown": "fadeInDown",
+                                "fadeInLeft": "fadeInLeft",
+                                "fadeInRight": "fadeInRight",
+                                "fadeInUp": "fadeInUp",
+                                "slideInDown": "slideInDown",
+                                "slideInLeft": "slideInLeft",
+                                "slideInRight": "slideInRight",
+                                "slideInUp": "slideInUp"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59bfd6c3d14c1",
+                            "label": "Large Centered Text",
+                            "name": "slide_large_centered_text",
+                            "type": "text",
+                            "instructions": "The middle large centered text.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "centered"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59bfdeaea4530",
+                            "label": "Large Centered Text Animation",
+                            "name": "slide_large_centered_text_animation",
+                            "type": "select",
+                            "instructions": "Animation used when this scrolls into view.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "centered"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "fadeInDown": "fadeInDown",
+                                "fadeInLeft": "fadeInLeft",
+                                "fadeInRight": "fadeInRight",
+                                "fadeInUp": "fadeInUp",
+                                "slideInDown": "slideInDown",
+                                "slideInLeft": "slideInLeft",
+                                "slideInRight": "slideInRight",
+                                "slideInUp": "slideInUp"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59bfd6e2d14c2",
+                            "label": "Lower Centered Text",
+                            "name": "slide_lower_centered_text",
+                            "type": "text",
+                            "instructions": "The line below the large centered text.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "centered"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59bfdf13a4531",
+                            "label": "Lower Centered Text Animation",
+                            "name": "slide_lower_centered_text_animation",
+                            "type": "select",
+                            "instructions": "Animation used when this scrolls into view.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_59bfcf071af36",
+                                        "operator": "==",
+                                        "value": "centered"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "fadeInDown": "fadeInDown",
+                                "fadeInLeft": "fadeInLeft",
+                                "fadeInRight": "fadeInRight",
+                                "fadeInUp": "fadeInUp",
+                                "slideInDown": "slideInDown",
+                                "slideInLeft": "slideInLeft",
+                                "slideInRight": "slideInRight",
+                                "slideInUp": "slideInUp"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_59c0302256eab",
+            "label": "Form",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59c0302f56eac",
+            "label": "Title",
+            "name": "form_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59c0304456ead",
+            "label": "Subtitle",
+            "name": "form_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59c032638bd5e",
+            "label": "Form",
+            "name": "form_form",
+            "type": "forms",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "allow_null": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_59c952041563b",
+            "label": "Form Embed Code",
+            "name": "form_embed_code",
+            "type": "textarea",
+            "instructions": "This will override the Form option if a form embed code is entered.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_59c0376c1fd94",
+            "label": "Resources",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59c037781fd95",
+            "label": "Resources",
+            "name": "resources",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_59c0377f1fd96",
+                    "label": "Resource",
+                    "name": "resource",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "post",
+                        "og_resource"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-infographic.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1506378831
+}

@@ -1,0 +1,280 @@
+//
+// Sticky footer
+//
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	min-height: 100vh;
+}
+
+body {
+	> .footer,
+	> .header {
+		flex-grow: 0;
+	}
+
+	> .l-main {
+		flex-grow: 1;
+		width: 100%;
+	}
+}
+
+//
+// Layout
+//
+.l-container {
+	position: relative;
+	margin: 0 auto;
+}
+
+@mixin l-content {
+	@include padding(null ($gutter / 2));
+	max-width: $content-bounds;
+
+	@include breakpoint($bp-hands-wide, min) {
+		@include padding(null $gutter);
+	}
+}
+
+.l-content,
+%l-content {
+	@include outer-container($content-bounds);
+	@include padding(null ($gutter / 2));
+
+	@include breakpoint($bp-hands-wide, min) {
+		@include padding(null $gutter);
+	}
+
+	.l-equal-columns & { padding: 0; }
+}
+
+@mixin l-ungutter {
+	@include margin(null (-$gutter / 2));
+
+	@include breakpoint($bp-hands-wide, min) {
+		@include margin(null (-$gutter));
+	}
+}
+
+//
+// Multi-column layout
+//
+.l-layout-wrap {
+	@include row;
+	@include l-content;
+	width: 100%;
+}
+
+.l-nav-sidebar,
+.l-primary {
+	@include breakpoint($bp-desk) {
+		padding-top: 6.25rem;
+	}
+}
+
+.l-nav-sidebar {
+	display: none;
+
+	@include breakpoint($bp-hands) {
+		display: block;
+	}
+
+	@include breakpoint($bp-hands-max, max) {
+		@include margin(null (-$gutter / 2));
+		@include padding(null ($gutter / 2));
+	}
+
+	@include breakpoint($bp-hands-wide-max, max) {
+		@include margin(null (-$gutter));
+		@include padding(null ($gutter));
+	}
+
+	@include breakpoint($bp-desk) {
+		@include span-columns(2.5 of 12);
+
+		&:first-child { margin-right: 0; }
+	}
+}
+
+.l-primary {
+	padding-top: 3.75rem;
+
+	@include breakpoint($bp-desk) {
+		@include span-columns(9.5 of 12);
+		padding-left: (2 * flex-gutter());
+	}
+
+	&:last-child {
+		@include footer-flush;
+		padding-bottom: 2.5rem;
+
+		@include breakpoint($bp-hands) {
+			padding-bottom: 3.75rem;
+		}
+
+		@include breakpoint($bp-desk) {
+			padding-bottom: 6.25rem;
+		}
+	}
+}
+
+.l-single-col {
+	@include breakpoint($bp-hands) {
+		@include span-columns(10 of 12);
+		@include shift(1 of 12);
+	}
+
+	@include breakpoint($bp-desk) {
+		@include span-columns(8 of 12);
+		@include shift(2 of 12);
+	}
+
+	> :last-child {
+		@include footer-flush;
+	}
+}
+
+//
+// Layout utility classes
+//
+.vertical-align { @include vertical-align(); }
+
+.l-fill-width { width: 100%; }
+
+.clearfix {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.scroll-locked { overflow: hidden; }
+
+.l-marginless { margin: 0; }
+.l-gutter-half { margin-bottom: $gutter / 2; }
+.l-gutter { margin-bottom: $gutter; }
+.l-gutter-top { margin-top: $gutter; }
+.l-gutter-2x { margin-bottom: 2 * $gutter; }
+
+.l-gutter-scale {
+	margin-bottom: $gutter;
+
+	@include breakpoint($bp-hands) {
+		margin-bottom: $gutter * 2;
+	}
+}
+
+.l-gutter-scale-sm {
+	margin-bottom: $gutter;
+
+	@include breakpoint($bp-desk) {
+		margin-bottom: 2.5rem;
+	}
+}
+
+.l-gutter-right { margin-right: $gutter; }
+
+.l-seperate-lg + .l-seperate-lg { margin-top: 3.75rem; }
+
+//
+// Panel columns
+//
+.l-col-primary {
+	.panel--sidebar & {
+		@include breakpoint($bp-hands-wide, min) {
+			@include span-columns(9 of 12);
+		}
+
+		@include breakpoint($bp-desk, min) {
+			@include span-columns(8 of 12);
+		}
+	}
+}
+
+.l-col-secondary {
+	.panel--sidebar & {
+		@include breakpoint($bp-hands, min) {
+			@include row();
+		}
+
+		@include breakpoint($bp-hands-wide, min) {
+			@include span-columns(3 of 12);
+		}
+
+		@include breakpoint($bp-desk, min) {
+			@include shift(1);
+		}
+	}
+}
+
+.l-equal-columns {
+	@include breakpoint($bp-hands-wide, min) {
+		display: flex;
+	}
+
+	.l-col {
+		@extend %panel-padding;
+
+		@include breakpoint($bp-hands-wide, min) {
+			flex-grow: 1;
+			width: 50%;
+			float: left;
+		}
+
+		&--img-bg {
+			background-position: center;
+			background-size: cover;
+
+			@include breakpoint($bp-hands-max, max) {
+				padding-top: 81%;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.col-bargraph { position: relative; }
+}
+
+.l-filter-header {
+	@include breakpoint($bp-desk) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	// Prevent flex issues due to Bourbon clearfixing.
+	&::after { display: none; }
+}
+
+.l-footer-flush { @include footer-flush; }
+
+//
+// Panel columns Alt
+//
+.l-col-primary-alt {
+	.panel--sidebar & {
+		@include breakpoint($bp-hands-wide, min) {
+			@include span-columns(8 of 12);
+		}
+
+		@include breakpoint($bp-desk, min) {
+			@include span-columns(7 of 12);
+		}
+	}
+}
+
+.l-col-secondary-alt {
+	.panel--sidebar & {
+		@include breakpoint($bp-hands, min) {
+			@include row();
+		}
+
+		@include breakpoint($bp-hands-wide, min) {
+			@include span-columns(4 of 12);
+		}
+
+		@include breakpoint($bp-desk, min) {
+			@include shift(1);
+		}
+	}
+}

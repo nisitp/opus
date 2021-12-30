@@ -1,0 +1,32 @@
+.page-template-page_landing {
+    .landing-description {
+        background-color: $brand-primary;
+        color: $text-on-dark;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .landing-nav {
+        background-color: $brand-primary;
+
+        .page-nav__category {
+            color: $text-on-dark;
+        }
+
+        .page-nav__item {
+            .page-nav__description {
+                color: $text-on-dark;
+            }
+
+            .page-nav__sub-item {
+                a {
+                    color: $text-on-dark;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
